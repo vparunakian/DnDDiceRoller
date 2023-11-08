@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05063EE52AFB0F1300308258 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05063EE42AFB0F1300308258 /* Material.swift */; };
 		055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */; };
 		055375732AF9C68E00244A63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* ContentView.swift */; };
 		055375752AF9C69000244A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055375742AF9C69000244A63 /* Assets.xcassets */; };
 		055375782AF9C69000244A63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055375772AF9C69000244A63 /* Preview Assets.xcassets */; };
+		05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D70E432AFAFB72007259D5 /* DiceType.swift */; };
+		05D70E462AFAFBBD007259D5 /* MainScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 05D70E452AFAFBBD007259D5 /* MainScene.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05063EE42AFB0F1300308258 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDDiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerApp.swift; sourceTree = "<group>"; };
 		055375722AF9C68E00244A63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		055375742AF9C69000244A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		055375772AF9C69000244A63 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		05D70E432AFAFB72007259D5 /* DiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceType.swift; sourceTree = "<group>"; };
+		05D70E452AFAFBBD007259D5 /* MainScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = MainScene.scn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,10 @@
 		0553756F2AF9C68E00244A63 /* DnDDiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				05D70E422AFAEE7D007259D5 /* Models */,
 				055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */,
 				055375722AF9C68E00244A63 /* ContentView.swift */,
+				05D70E452AFAFBBD007259D5 /* MainScene.scn */,
 				055375742AF9C69000244A63 /* Assets.xcassets */,
 				055375762AF9C69000244A63 /* Preview Content */,
 			);
@@ -65,6 +73,15 @@
 				055375772AF9C69000244A63 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		05D70E422AFAEE7D007259D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05D70E432AFAFB72007259D5 /* DiceType.swift */,
+				05063EE42AFB0F1300308258 /* Material.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +144,7 @@
 			files = (
 				055375782AF9C69000244A63 /* Preview Assets.xcassets in Resources */,
 				055375752AF9C69000244A63 /* Assets.xcassets in Resources */,
+				05D70E462AFAFBBD007259D5 /* MainScene.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05063EE52AFB0F1300308258 /* Material.swift in Sources */,
 				055375732AF9C68E00244A63 /* ContentView.swift in Sources */,
+				05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
