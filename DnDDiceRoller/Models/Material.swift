@@ -11,11 +11,16 @@ import SceneKit
 enum Material {
     static let tableMaterial = createMaterial(named: "Table")
     static let wallMaterial = createMaterial(named: "Wall")
-    static let diceMaterial = createMaterial(named: "Dice")
+    static let diceMaterial = [1, 2, 6, 5, 3, 4].map { createMaterial(named: "Dice", withText: "\($0)") }
     
-    static func createMaterial(named: String) -> SCNMaterial {
+    static func createMaterial(named: String, withText text: String? = nil) -> SCNMaterial {
         let material = SCNMaterial()
-        if let diffuse = UIImage(named: named) {
+        if var diffuse = UIImage(named: named) {
+            if let text = text {
+                let image = UIImage.getImageFromString(text, color: .yellow,
+                                                       font: .systemFont(ofSize: 10))
+                diffuse = diffuse.mergeWith(topImage: image!)
+            }
             material.diffuse.contents = diffuse
         }
         if let roughness = UIImage(named: "\(named)Roughness") {
@@ -30,6 +35,9 @@ enum Material {
         if let normal = UIImage(named: "\(named)Normal") {
             material.normal.contents = normal
         }
+       
         return material
     }
+    
+    
 }

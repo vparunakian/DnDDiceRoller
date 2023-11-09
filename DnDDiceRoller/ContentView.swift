@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         SceneView(scene: mainScene,
-                  pointOfView: setUpCamera())
+                  pointOfView: setUpCamera(), options: [.allowsCameraControl])
             .background(.secondary)
             .edgesIgnoringSafeArea(.all)
     }
@@ -38,8 +38,9 @@ struct ContentView: View {
         
         let dice = scene?.rootNode.childNode(withName: "dice", recursively: false)
         let diceMat = Material.diceMaterial
-        dice?.geometry?.materials = Array(repeating: diceMat, count: 6)
-        
+
+        dice?.geometry?.materials = diceMat
+    
         let skyboxImages = UIImage(named: "Wall")
         scene?.background.contents = skyboxImages
     }
