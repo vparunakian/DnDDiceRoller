@@ -12,6 +12,7 @@ enum DiceType {
     case d6
     case d8
     case d10
+    case d10t
     case d12
     case d20
 }

@@ -8,36 +8,42 @@
 import Foundation
 import SceneKit
 
-enum Material {
-    static let tableMaterial = createMaterial(named: "Table")
-    static let wallMaterial = createMaterial(named: "Wall")
-    static let diceMaterial = [1, 2, 6, 5, 3, 4].map { createMaterial(named: "Dice", withText: "\($0)") }
-    
-    static func createMaterial(named: String, withText text: String? = nil) -> SCNMaterial {
-        let material = SCNMaterial()
-        if var diffuse = UIImage(named: named) {
-            if let text = text {
-                let image = UIImage.getImageFromString(text, color: .yellow,
-                                                       font: .systemFont(ofSize: 10))
-                diffuse = diffuse.mergeWith(topImage: image!)
-            }
-            material.diffuse.contents = diffuse
+enum Material: String {
+    case plastic = "Plastic008"
+    case wood = "Wood049"
+    case metalMirror = "Metal012"
+    case metalRough = "Metal046A"
+        
+    func apply(to node: SCNNode?) {
+        guard let node = node else {
+            return
         }
-        if let roughness = UIImage(named: "\(named)Roughness") {
+        
+        guard let material = node.geometry?.material(named: "main") else {
+            return
+        }
+        
+        if let color = UIImage(named: "\(rawValue)_color") {
+            material.diffuse.contents = color
+        }
+        if let roughness = UIImage(named: "\(rawValue)_roughness") {
             material.roughness.contents = roughness
         }
-        if let metalness = UIImage(named: "\(named)Metalness") {
+        if let normalMap = UIImage(named: "\(rawValue)_normal") {
+            material.normal.contents = normalMap
+        }
+        if let metalness = UIImage(named: "\(rawValue)_metalness") {
             material.metalness.contents = metalness
         }
-        if let ambientOc = UIImage(named: "\(named)AO") {
-            material.ambientOcclusion.contents = ambientOc
+        if let displacement = UIImage(named: "\(rawValue)_displacement") {
+            if self == .wood {
+//                material.displacement.contents = displacement
+//                material.displacement.intensity = 1
+            }
         }
-        if let normal = UIImage(named: "\(named)Normal") {
-            material.normal.contents = normal
-        }
-       
-        return material
+        
+        
+        //material.specular.contents = UIColor(white: 0.8, alpha: 1.0)
+        //material.shininess = 70
     }
-    
-    
 }

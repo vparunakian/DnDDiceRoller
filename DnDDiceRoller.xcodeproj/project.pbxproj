@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		05063EE52AFB0F1300308258 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05063EE42AFB0F1300308258 /* Material.swift */; };
-		05063EE82AFC2D6300308258 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05063EE72AFC2D6300308258 /* UIImage+Extensions.swift */; };
 		05063EEC2AFC5F7D00308258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EEB2AFC5F7D00308258 /* Assets.xcassets */; };
 		05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF12AFC674D00308258 /* Preview Assets.xcassets */; };
+		05063EF42AFD7E0A00308258 /* SceneKit Asset Catalog.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF32AFD7E0A00308258 /* SceneKit Asset Catalog.scnassets */; };
+		054923DC2B05896300317F1F /* Decal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054923DB2B05896300317F1F /* Decal.swift */; };
 		055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */; };
 		055375732AF9C68E00244A63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* ContentView.swift */; };
 		05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D70E432AFAFB72007259D5 /* DiceType.swift */; };
@@ -19,9 +20,10 @@
 
 /* Begin PBXFileReference section */
 		05063EE42AFB0F1300308258 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
-		05063EE72AFC2D6300308258 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		05063EEB2AFC5F7D00308258 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05063EF12AFC674D00308258 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		05063EF32AFD7E0A00308258 /* SceneKit Asset Catalog.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = "SceneKit Asset Catalog.scnassets"; sourceTree = "<group>"; };
+		054923DB2B05896300317F1F /* Decal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decal.swift; sourceTree = "<group>"; };
 		0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDDiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerApp.swift; sourceTree = "<group>"; };
 		055375722AF9C68E00244A63 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,7 +45,6 @@
 		05063EE62AFC2D5400308258 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				05063EE72AFC2D6300308258 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -59,6 +60,7 @@
 		055375642AF9C68E00244A63 = {
 			isa = PBXGroup;
 			children = (
+				05063EF32AFD7E0A00308258 /* SceneKit Asset Catalog.scnassets */,
 				0553756F2AF9C68E00244A63 /* DnDDiceRoller */,
 				0553756E2AF9C68E00244A63 /* Products */,
 			);
@@ -91,6 +93,7 @@
 			children = (
 				05D70E432AFAFB72007259D5 /* DiceType.swift */,
 				05063EE42AFB0F1300308258 /* Material.swift */,
+				054923DB2B05896300317F1F /* Decal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05063EF42AFD7E0A00308258 /* SceneKit Asset Catalog.scnassets in Resources */,
 				05D70E462AFAFBBD007259D5 /* MainScene.scn in Resources */,
 				05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */,
 				05063EEC2AFC5F7D00308258 /* Assets.xcassets in Resources */,
@@ -167,8 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05063EE52AFB0F1300308258 /* Material.swift in Sources */,
+				054923DC2B05896300317F1F /* Decal.swift in Sources */,
 				055375732AF9C68E00244A63 /* ContentView.swift in Sources */,
-				05063EE82AFC2D6300308258 /* UIImage+Extensions.swift in Sources */,
 				05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
 			);
