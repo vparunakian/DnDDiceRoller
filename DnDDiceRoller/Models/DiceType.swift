@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DiceType {
+enum DiceType: String, CaseIterable {
     case d4
     case d6
     case d8
@@ -15,4 +15,8 @@ enum DiceType {
     case d10t
     case d12
     case d20
+}
+
+extension DiceType: Identifiable {
+    var id: String { UUID().uuidString }
 }

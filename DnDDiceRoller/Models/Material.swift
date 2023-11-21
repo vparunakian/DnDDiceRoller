@@ -5,7 +5,6 @@
 //  Created by Volodymyr Parunakian on 07.11.2023.
 //
 
-import Foundation
 import SceneKit
 
 enum Material: String {
@@ -35,15 +34,5 @@ enum Material: String {
         if let metalness = UIImage(named: "\(rawValue)_metalness") {
             material.metalness.contents = metalness
         }
-        if let displacement = UIImage(named: "\(rawValue)_displacement") {
-            if self == .wood {
-//                material.displacement.contents = displacement
-//                material.displacement.intensity = 1
-            }
-        }
-        
-        
-        //material.specular.contents = UIColor(white: 0.8, alpha: 1.0)
-        //material.shininess = 70
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct DnDDiceRollerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
