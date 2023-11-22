@@ -8,6 +8,7 @@
 import Foundation
 
 enum NodeType: String {
+    case camera
     case d4
     case d6
     case d8
@@ -15,5 +16,5 @@ enum NodeType: String {
     case d12
     case d20
     case table
-    case camera
+    case wall
 }

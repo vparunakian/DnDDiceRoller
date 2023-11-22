@@ -12,8 +12,12 @@ final class MainViewModel: ObservableObject {
     private let mainSceneManager = MainSceneManager(scene: .main)
     private let diceSceneManager = MainSceneManager(scene: .dice)
     
+    private var currentDice: SCNNode?
     @Published private(set) var mainScene: SCNScene?
     @Published private(set) var camera: SCNNode?
+    
+    @Published var material = Material.metalRefl
+    @Published var decal = Decal.sfpr
     
     init() {
         self.setupMainScene()
@@ -34,25 +38,29 @@ final class MainViewModel: ObservableObject {
     private func applyTextures(to scene: SCNScene?) {
         let table = mainSceneManager.getNode(type: .table)
         Material.wood.apply(to: table)
-        
-        let d4 = diceSceneManager.getNode(type: .d4)
-        Material.metalMirror.apply(to: d4)
-        Decal.d4.apply(to: d4)
-        
-        let d6 = diceSceneManager.getNode(type: .d6)
-        
-        Material.metalRough.apply(to: d6)
-        Decal.dN.apply(to: d6)
-        
-        let rotateAction = SCNAction.repeatForever(SCNAction.rotate(by: CGFloat(-Double.pi * 2), around: SCNVector3(x: 0, y: 1, z: 1), duration: TimeInterval(10)))
-      
-        d6?.runAction(rotateAction)
-    
-//        let skyboxImages = UIImage(named: "Wall")
-//        scene?.background.contents = skyboxImages
     }
     
     func spawnDice(type: DiceType) {
+        guard let dice = diceSceneManager.getNode(type: type.nodeType)?.clone() else {
+            return
+        }
+        removeDice()
+        material.apply(to: dice)
+        decal.apply(to: dice)
+        dice.position = SCNVector3(0, 5, 0)
+        currentDice = dice
         
+        let rotateAction = SCNAction.repeatForever(
+            SCNAction.rotate(by: CGFloat(-Double.pi * 2), around: SCNVector3(x: 0, y: 1, z: 1),
+                             duration: TimeInterval(10))
+        )
+      
+        dice.runAction(rotateAction)
+        mainScene?.rootNode.addChildNode(dice)
+    }
+    
+    func removeDice() {
+        currentDice?.removeFromParentNode()
+        currentDice = nil
     }
 }

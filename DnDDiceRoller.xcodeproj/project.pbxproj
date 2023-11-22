@@ -16,6 +16,7 @@
 		055375732AF9C68E00244A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* MainView.swift */; };
 		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF62B0C09EF00791897 /* SceneManager.swift */; };
+		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
 		0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11A2B0D59DC00C40A06 /* SceneType.swift */; };
 		0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */; };
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
@@ -33,6 +34,7 @@
 		055375722AF9C68E00244A63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0554ACF32B0C023000791897 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0554ACF62B0C09EF00791897 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0575D11A2B0D59DC00C40A06 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneManager.swift; sourceTree = "<group>"; };
 		0575D11E2B0D73AA00C40A06 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				055375722AF9C68E00244A63 /* MainView.swift */,
 				0554ACF32B0C023000791897 /* MainViewModel.swift */,
+				0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -109,9 +112,9 @@
 		05D70E422AFAEE7D007259D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				05D70E432AFAFB72007259D5 /* DiceType.swift */,
 				05063EE42AFB0F1300308258 /* Material.swift */,
 				054923DB2B05896300317F1F /* Decal.swift */,
+				05D70E432AFAFB72007259D5 /* DiceType.swift */,
 				0575D11A2B0D59DC00C40A06 /* SceneType.swift */,
 				0575D11E2B0D73AA00C40A06 /* NodeType.swift */,
 			);
@@ -198,6 +201,7 @@
 				0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */,
 				05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
+				0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */,
 				0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

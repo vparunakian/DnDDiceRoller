@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
+    @State private var showingSettings = false
     
     var body: some View {
         ZStack {
@@ -18,6 +19,19 @@ struct MainView: View {
                 .background(.secondary)
                 .edgesIgnoringSafeArea(.all)
             HStack {
+                Button(action: {
+                    showingSettings.toggle()
+                }) {
+                    Label("", systemImage: "gear")
+                        .font(.system(size: 40))
+                        .tint(.black)
+                        .controlSize(.large)
+                }
+                .popover(isPresented: $showingSettings) {
+                    SettingsView(viewModel: viewModel)
+                        .frame(minWidth: 400, minHeight: 150)
+                }
+                Spacer()
                 Menu {
                     ForEach(DiceType.allCases) { dice in
                         Button(action: {
@@ -29,15 +43,13 @@ struct MainView: View {
                 } label: {
                     Label("", systemImage: "dice.fill")
                         .font(.system(size: 40))
-                        .tint(.red)
+                        .tint(.black)
                         .controlSize(.large)
 
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .ignoresSafeArea(.all)
-            .frame(maxHeight: .infinity, alignment: .top)
-            .padding(.trailing)
+            .padding(.horizontal)
         }
     }
 }

@@ -7,11 +7,24 @@
 
 import SceneKit
 
-enum Material: String {
+enum Material: String, CaseIterable {
     case plastic = "Plastic008"
     case wood = "Wood049"
-    case metalMirror = "Metal012"
-    case metalRough = "Metal046A"
+    case metalRefl = "Metal012"
+    case metalMatte = "Metal046A"
+    
+    var displayName: String {
+        switch self {
+        case .plastic:
+            return "Blue Plastic"
+        case .wood:
+            return "Wood"
+        case .metalRefl:
+            return "Reflective Metal"
+        case .metalMatte:
+            return "Matte Metal"
+        }
+    }
         
     func apply(to node: SCNNode?) {
         guard let node = node else {
@@ -22,17 +35,13 @@ enum Material: String {
             return
         }
         
-        if let color = UIImage(named: "\(rawValue)_color") {
-            material.diffuse.contents = color
-        }
-        if let roughness = UIImage(named: "\(rawValue)_roughness") {
-            material.roughness.contents = roughness
-        }
-        if let normalMap = UIImage(named: "\(rawValue)_normal") {
-            material.normal.contents = normalMap
-        }
-        if let metalness = UIImage(named: "\(rawValue)_metalness") {
-            material.metalness.contents = metalness
-        }
+        material.diffuse.contents = UIImage(named: "\(rawValue)_color")
+        material.roughness.contents = UIImage(named: "\(rawValue)_roughness")
+        material.normal.contents = UIImage(named: "\(rawValue)_normal")
+        material.metalness.contents = UIImage(named: "\(rawValue)_metalness")
     }
+}
+
+extension Material: Identifiable {
+    var id: String { rawValue }
 }
