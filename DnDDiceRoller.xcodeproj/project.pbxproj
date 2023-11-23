@@ -17,6 +17,7 @@
 		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF62B0C09EF00791897 /* SceneManager.swift */; };
 		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
+		0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */; };
 		0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11A2B0D59DC00C40A06 /* SceneType.swift */; };
 		0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */; };
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
@@ -35,6 +36,7 @@
 		0554ACF32B0C023000791897 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0554ACF62B0C09EF00791897 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
 		0575D11A2B0D59DC00C40A06 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneManager.swift; sourceTree = "<group>"; };
 		0575D11E2B0D73AA00C40A06 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		0553756F2AF9C68E00244A63 /* DnDDiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				0566BADD2B0EDE7B00D10E11 /* Helpers */,
 				0575D1192B0D596200C40A06 /* Managers */,
 				0554ACF52B0C023600791897 /* Main */,
 				05D70E422AFAEE7D007259D5 /* Models */,
@@ -98,6 +101,14 @@
 				0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0566BADD2B0EDE7B00D10E11 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0575D1192B0D596200C40A06 /* Managers */ = {
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05063EE52AFB0F1300308258 /* Material.swift in Sources */,
+				0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */,
 				054923DC2B05896300317F1F /* Decal.swift in Sources */,
 				0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */,
 				0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */,

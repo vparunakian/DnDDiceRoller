@@ -8,7 +8,7 @@
 import Combine
 import SceneKit
 
-final class MainViewModel: ObservableObject {  
+final class MainViewModel: ObservableObject {
     private let mainSceneManager = MainSceneManager(scene: .main)
     private let diceSceneManager = MainSceneManager(scene: .dice)
     
@@ -28,6 +28,9 @@ final class MainViewModel: ObservableObject {
     private func setupMainScene() {
         let scene = mainSceneManager.scene
         applyTextures(to: scene)
+        
+        let table = mainSceneManager.getNode(type: .table)
+        table?.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape())
         mainScene = scene
     }
     
@@ -40,18 +43,41 @@ final class MainViewModel: ObservableObject {
         Material.wood.apply(to: table)
     }
     
+    private func removeDiceIfNeeded() {
+        guard currentDice != nil else {
+            return
+        }
+        currentDice?.physicsBody?.clearAllForces()
+        currentDice?.removeAllActions()
+        currentDice?.removeFromParentNode()
+        currentDice = nil
+    }
+    
+    private func setupPhysics(dice: SCNNode?) {
+        dice?.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape())
+        // TODO: make mass and all of other parameters dependant on material
+        dice?.physicsBody?.angularDamping = 0.1
+        dice?.physicsBody?.restitution = 0.3
+        dice?.physicsBody?.friction = 0.7
+        dice?.physicsBody?.mass = 0.15
+        dice?.rotation = SCNVector4(.random(in: 0...1), .random(in: 0...1), .random(in: 0...1),
+                                    Double.pi * .random(in: 0.1...2))
+    }
+    
     func spawnDice(type: DiceType) {
+        removeDiceIfNeeded()
         guard let dice = diceSceneManager.getNode(type: type.nodeType)?.clone() else {
             return
         }
-        removeDice()
         material.apply(to: dice)
         decal.apply(to: dice)
-        dice.position = SCNVector3(0, 5, 0)
         currentDice = dice
         
+        dice.position = SCNVector3(0, 7, 0)
+        
         let rotateAction = SCNAction.repeatForever(
-            SCNAction.rotate(by: CGFloat(-Double.pi * 2), around: SCNVector3(x: 0, y: 1, z: 1),
+            SCNAction.rotate(by: -Double.pi * 2,
+                             around: SCNVector3(x: 0, y: 1, z: 0),
                              duration: TimeInterval(10))
         )
       
@@ -59,8 +85,17 @@ final class MainViewModel: ObservableObject {
         mainScene?.rootNode.addChildNode(dice)
     }
     
-    func removeDice() {
-        currentDice?.removeFromParentNode()
-        currentDice = nil
+    func throwDice() {
+        currentDice?.removeAllActions()
+        setupPhysics(dice: currentDice)
+        
+        let pushDirection = SCNVector3(x: .random(in: -0.6...(-0.1)), y: 0, 
+                                       z: .random(in: -0.6...(-0.1)))
+        let atPoint = SCNVector3(x: .random(in: 0.1...2.0), y: .random(in: 0.1...2.0),
+                                 z: .random(in: 0.1...2.0))
+        currentDice?.physicsBody?.applyForce(pushDirection, at: atPoint, asImpulse: true)
+        let torque = SCNVector4(.random(in: 0...0.5), .random(in: 0...0.5), .random(in: 0...0.5),
+                                Double.pi * .random(in: 0.05...2))
+        currentDice?.physicsBody?.applyTorque(torque, asImpulse: false)
     }
 }

@@ -15,14 +15,17 @@ struct MainView: View {
     var body: some View {
         ZStack {
             SceneView(scene: viewModel.mainScene,
-                      pointOfView: viewModel.camera, options: [.allowsCameraControl])
+                      pointOfView: viewModel.camera, options: [])
                 .background(.secondary)
                 .edgesIgnoringSafeArea(.all)
+                .onTapGesture { location in
+                    viewModel.throwDice()
+                }
             HStack {
                 Button(action: {
                     showingSettings.toggle()
                 }) {
-                    Label("", systemImage: "gear")
+                    Label("", systemImage: "gearshape.fill")
                         .font(.system(size: 40))
                         .tint(.black)
                         .controlSize(.large)

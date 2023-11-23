@@ -30,7 +30,6 @@ enum Material: String, CaseIterable {
         guard let node = node else {
             return
         }
-        
         guard let material = node.geometry?.material(named: "main") else {
             return
         }

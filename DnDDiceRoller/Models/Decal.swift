@@ -25,7 +25,7 @@ enum Decal: String, CaseIterable {
             return
         }
         
-        let suffix = node.name == DiceType.d4.rawValue ? "D4" : "DN"
+        let suffix = (node.nodeType == .d4) ? "D4" : "DN"
         if let color = UIImage(named: "\(rawValue)_\(suffix)_color") {
             material.diffuse.contents = color
         }
