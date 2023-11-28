@@ -89,13 +89,13 @@ final class MainViewModel: ObservableObject {
         currentDice?.removeAllActions()
         setupPhysics(dice: currentDice)
         
-        let pushDirection = SCNVector3(x: .random(in: -0.6...(-0.1)), y: 0, 
-                                       z: .random(in: -0.6...(-0.1)))
+        let pushDirection = SCNVector3(x: .random(in: -0.4...(-0.1)), y: 0,
+                                       z: .random(in: -0.4...(-0.1)))
         let atPoint = SCNVector3(x: .random(in: 0.1...2.0), y: .random(in: 0.1...2.0),
                                  z: .random(in: 0.1...2.0))
         currentDice?.physicsBody?.applyForce(pushDirection, at: atPoint, asImpulse: true)
-        let torque = SCNVector4(.random(in: 0...0.5), .random(in: 0...0.5), .random(in: 0...0.5),
-                                Double.pi * .random(in: 0.05...2))
+        let torque = SCNVector4(.random(in: 0...0.3), .random(in: 0...0.3), .random(in: 0...0.3),
+                                Double.pi * .random(in: 0.05...0.5))
         currentDice?.physicsBody?.applyTorque(torque, asImpulse: false)
     }
 }
