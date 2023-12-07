@@ -16,12 +16,14 @@
 		055375732AF9C68E00244A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* MainView.swift */; };
 		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF62B0C09EF00791897 /* SceneManager.swift */; };
+		0556EADA2B16E15B000583EC /* SCNVector3+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EAD92B16E15B000583EC /* SCNVector3+Equatable.swift */; };
 		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
 		0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */; };
 		0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11A2B0D59DC00C40A06 /* SceneType.swift */; };
 		0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */; };
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
-		05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D70E432AFAFB72007259D5 /* DiceType.swift */; };
+		05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */; };
+		05DF70102B17E7C700070540 /* PhysicsBodyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DF700F2B17E7C700070540 /* PhysicsBodyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,12 +37,14 @@
 		055375722AF9C68E00244A63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0554ACF32B0C023000791897 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0554ACF62B0C09EF00791897 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		0556EAD92B16E15B000583EC /* SCNVector3+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Equatable.swift"; sourceTree = "<group>"; };
 		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
 		0575D11A2B0D59DC00C40A06 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneManager.swift; sourceTree = "<group>"; };
 		0575D11E2B0D73AA00C40A06 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
-		05D70E432AFAFB72007259D5 /* DiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceType.swift; sourceTree = "<group>"; };
+		05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTypeMenuView.swift; sourceTree = "<group>"; };
+		05DF700F2B17E7C700070540 /* PhysicsBodyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		0553756F2AF9C68E00244A63 /* DnDDiceRoller */ = {
 			isa = PBXGroup;
 			children = (
+				0566BC682B1FC91600B9CD56 /* Settings */,
 				0566BADD2B0EDE7B00D10E11 /* Helpers */,
 				0575D1192B0D596200C40A06 /* Managers */,
 				0554ACF52B0C023600791897 /* Main */,
@@ -98,7 +103,7 @@
 			children = (
 				055375722AF9C68E00244A63 /* MainView.swift */,
 				0554ACF32B0C023000791897 /* MainViewModel.swift */,
-				0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */,
+				05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -107,8 +112,17 @@
 			isa = PBXGroup;
 			children = (
 				0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */,
+				0556EAD92B16E15B000583EC /* SCNVector3+Equatable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0566BC682B1FC91600B9CD56 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		0575D1192B0D596200C40A06 /* Managers */ = {
@@ -116,6 +130,7 @@
 			children = (
 				0554ACF62B0C09EF00791897 /* SceneManager.swift */,
 				0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */,
+				05DF700F2B17E7C700070540 /* PhysicsBodyManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -123,11 +138,10 @@
 		05D70E422AFAEE7D007259D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				05063EE42AFB0F1300308258 /* Material.swift */,
 				054923DB2B05896300317F1F /* Decal.swift */,
-				05D70E432AFAFB72007259D5 /* DiceType.swift */,
-				0575D11A2B0D59DC00C40A06 /* SceneType.swift */,
+				05063EE42AFB0F1300308258 /* Material.swift */,
 				0575D11E2B0D73AA00C40A06 /* NodeType.swift */,
+				0575D11A2B0D59DC00C40A06 /* SceneType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,14 +220,16 @@
 				05063EE52AFB0F1300308258 /* Material.swift in Sources */,
 				0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */,
 				054923DC2B05896300317F1F /* Decal.swift in Sources */,
+				05DF70102B17E7C700070540 /* PhysicsBodyManager.swift in Sources */,
 				0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */,
 				0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */,
 				055375732AF9C68E00244A63 /* MainView.swift in Sources */,
 				0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */,
 				0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */,
-				05D70E442AFAFB72007259D5 /* DiceType.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
+				05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */,
 				0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */,
+				0556EADA2B16E15B000583EC /* SCNVector3+Equatable.swift in Sources */,
 				0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

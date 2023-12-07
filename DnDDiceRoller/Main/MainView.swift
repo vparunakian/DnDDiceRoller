@@ -13,51 +13,37 @@ struct MainView: View {
     @State private var showingSettings = false
     
     var body: some View {
-        ZStack {
-            SceneView(scene: viewModel.mainScene,
-                      pointOfView: viewModel.camera, options: [])
+        NavigationStack {
+            ZStack {
+                SceneView(scene: viewModel.mainScene,
+                          pointOfView: viewModel.camera, options: [])
                 .background(.secondary)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture { location in
                     viewModel.throwDice()
                 }
-            HStack {
+                
+                DiceTypeMenuView()
+                    .environmentObject(viewModel)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .padding()
+            }
+            .toolbar {
                 Button(action: {
                     showingSettings.toggle()
                 }) {
                     Label("", systemImage: "gearshape.fill")
-                        .font(.system(size: 40))
-                        .tint(.black)
-                        .controlSize(.large)
                 }
                 .popover(isPresented: $showingSettings) {
-                    SettingsView(viewModel: viewModel)
+                    SettingsView()
+                        .environmentObject(viewModel)
                         .frame(minWidth: 400, minHeight: 150)
                 }
-                Spacer()
-                Menu {
-                    ForEach(DiceType.allCases) { dice in
-                        Button(action: {
-                            viewModel.spawnDice(type: dice)
-                        }, label: {
-                            Text(dice.rawValue.uppercased())
-                        })
-                    }
-                } label: {
-                    Label("", systemImage: "dice.fill")
-                        .font(.system(size: 40))
-                        .tint(.black)
-                        .controlSize(.large)
-
-                }
             }
-            .ignoresSafeArea(.all)
-            .padding(.horizontal)
         }
     }
 }
 
 #Preview {
     MainView()
-        .previewDevice(PreviewDevice(rawValue: "iPad Air 5th generation"))
 }

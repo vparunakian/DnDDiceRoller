@@ -27,10 +27,7 @@ enum Material: String, CaseIterable {
     }
         
     func apply(to node: SCNNode?) {
-        guard let node = node else {
-            return
-        }
-        guard let material = node.geometry?.material(named: "main") else {
+        guard let node = node, let material = node.geometry?.material(named: "main") else {
             return
         }
         
@@ -38,6 +35,17 @@ enum Material: String, CaseIterable {
         material.roughness.contents = UIImage(named: "\(rawValue)_roughness")
         material.normal.contents = UIImage(named: "\(rawValue)_normal")
         material.metalness.contents = UIImage(named: "\(rawValue)_metalness")
+    }
+    
+    static func textureRepeat(for node: SCNNode?) {
+        guard let material = node?.geometry?.material(named: "main") else {
+            return
+        }
+        [material.diffuse, material.roughness, material.normal].forEach {
+            $0.wrapS = .repeat
+            $0.wrapT = .repeat
+            $0.contentsTransform = SCNMatrix4MakeScale(4, 4, 0)
+        }
     }
 }
 

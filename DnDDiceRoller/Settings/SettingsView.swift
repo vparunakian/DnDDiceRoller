@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var viewModel: MainViewModel
-    
+    @EnvironmentObject private var viewModel: MainViewModel
+
     var body: some View {
         Form {
             Picker("Dice Material", selection: $viewModel.material) {
@@ -27,5 +27,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(viewModel: MainViewModel())
+    SettingsView()
 }

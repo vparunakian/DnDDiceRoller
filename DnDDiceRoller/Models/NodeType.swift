@@ -17,4 +17,10 @@ enum NodeType: String {
     case d20
     case table
     case wall
+    
+    static let allDice = [Self.d4, .d6, .d8, .d10, .d12, .d20]
+}
+
+extension NodeType: Identifiable {
+    var id: String { UUID().uuidString }
 }
