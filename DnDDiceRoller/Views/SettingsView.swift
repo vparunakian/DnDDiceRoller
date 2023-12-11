@@ -22,10 +22,14 @@ struct SettingsView: View {
                     Text($0.displayName).tag($0)
                 }
             }
+            Toggle(isOn: $viewModel.isDebugMode, label: {
+                Text("Debug Mode")
+            })
         }
     }
 }
 
 #Preview {
     SettingsView()
+        .environmentObject(MainViewModel())
 }

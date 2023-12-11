@@ -9,24 +9,30 @@ import SceneKit
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject private var viewModel = MainViewModel()
+    @EnvironmentObject private var viewModel: MainViewModel
     @State private var showingSettings = false
     
     var body: some View {
         NavigationStack {
             ZStack {
                 SceneView(scene: viewModel.mainScene,
-                          pointOfView: viewModel.camera, options: [])
+                          pointOfView: viewModel.camera, 
+                          options: [],
+                          delegate: viewModel)
                 .background(.secondary)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture { location in
                     viewModel.throwDice()
                 }
-                
-                DiceTypeMenuView()
-                    .environmentObject(viewModel)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .padding()
+                ZStack {
+                    if viewModel.isDebugMode {
+                        DebugModeView(nodeStats: viewModel.nodeStats)
+                            .frame(maxHeight: .infinity, alignment: .top)
+                    }
+                    DiceTypeMenuView()
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .padding()
+                }
             }
             .toolbar {
                 Button(action: {
@@ -36,14 +42,15 @@ struct MainView: View {
                 }
                 .popover(isPresented: $showingSettings) {
                     SettingsView()
-                        .environmentObject(viewModel)
                         .frame(minWidth: 400, minHeight: 150)
                 }
             }
         }
+        .accentColor(.primary)
     }
 }
 
 #Preview {
     MainView()
+        .environmentObject(MainViewModel())
 }

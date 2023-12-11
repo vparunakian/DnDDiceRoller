@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DiceTypeMenuView: View {
-    @EnvironmentObject var viewModel: MainViewModel
+    @EnvironmentObject private var viewModel: MainViewModel
 
     var body: some View {
         HStack(spacing: 2) {
@@ -29,4 +29,5 @@ struct DiceTypeMenuView: View {
 
 #Preview {
     DiceTypeMenuView()
+        .environmentObject(MainViewModel())
 }

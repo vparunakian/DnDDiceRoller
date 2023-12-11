@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DnDDiceRollerApp: App {
+    @StateObject private var viewModel = MainViewModel()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(viewModel)
         }
     }
 }
