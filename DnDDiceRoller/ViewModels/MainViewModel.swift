@@ -80,11 +80,11 @@ final class MainViewModel: NSObject, ObservableObject {
             let moveVector: SCNVector3
             if presentation.nodeType == .d4 {
                 moveVector = SCNVector3(x: presentation.position.x,
-                                        y: 4,
-                                        z: presentation.position.z + 2.4)
+                                        y: 3,
+                                        z: presentation.position.z + 2)
             } else {
                 moveVector = SCNVector3(x: presentation.position.x,
-                                        y: 5 ,
+                                        y: 4,
                                         z: presentation.position.z)
             }
             let move = SCNAction.move(to: moveVector, duration: 0.33)

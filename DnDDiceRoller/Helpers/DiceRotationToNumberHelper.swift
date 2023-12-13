@@ -87,25 +87,25 @@ enum DiceAnglesToNumberHelper {
     
     private static func convertD10(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
-        case (0.4...0.5, 0.8...0.85):
+        case (0.4...0.5, 0.8...0.9):
             return 1
         case (0.4...0.5, -2.35...(-2.3)):
             return 2
-        case (-0.87...(-0.85), -0.38...(-0.34)):
+        case (-0.9...(-0.8), -0.38...(-0.34)):
             return 3
         case (-0.1...1.0, 2.2...2.36):
             return 4
         case (-0.1...1.0, -0.92...(-0.9)):
             return 5
-        case (0.85...0.87, 2.7...2.8):
+        case (0.8...0.9, 2.7...2.8):
             return 6
         case (-0.5...(-0.43), 0.78...0.82):
             return 7
         case (-0.5...(-0.43), -2.35...(-2.3)):
             return 8
-        case (0.85...0.87, -0.38...(-0.34)):
+        case (0.8...0.9, -0.38...(-0.34)):
             return 9
-        case (-0.87...(-0.85), 2.7...2.8):
+        case (-0.9...(-0.8), 2.7...2.8):
             return 10
         default:
             return -1
