@@ -64,19 +64,19 @@ enum DiceAnglesToNumberHelper {
     
     private static func convertD8(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
-        case (0.6...0.62, 0.78...0.79):
+        case (0.6...0.62, 0.75...0.8):
             return 1
         case (0.6...0.62, -2.36...(-2.35)):
             return 2
-        case (0.6...0.62, -0.79...(-0.78)):
+        case (0.6...0.62, -0.8...(-0.75)):
             return 3
         case (0.6...0.62, 2.35...2.36):
             return 4
-        case (-0.62...(-0.6), -0.79...(-0.78)):
+        case (-0.62...(-0.6), -0.8...(-0.75)):
             return 5
         case (-0.62...(-0.6), 2.35...2.36):
             return 6
-        case (-0.62...(-0.6), 0.78...0.79):
+        case (-0.62...(-0.6), 0.75...0.8):
             return 7
         case (-0.62...(-0.6), -2.36...(-2.35)):
             return 8
@@ -143,12 +143,3 @@ enum DiceAnglesToNumberHelper {
         }
     }
 }
-
-//7 -2.48 0.52 1.4
-
-
-//11 -0.44  0.05  -2.13
-
-//12
-
-
