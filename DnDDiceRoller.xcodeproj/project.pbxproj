@@ -11,6 +11,7 @@
 		05063EEC2AFC5F7D00308258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EEB2AFC5F7D00308258 /* Assets.xcassets */; };
 		05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF12AFC674D00308258 /* Preview Assets.xcassets */; };
 		05063EF42AFD7E0A00308258 /* SceneKitAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF32AFD7E0A00308258 /* SceneKitAssets.scnassets */; };
+		051C03772B298465005C89F3 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
 		052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86202B229DDE000A3D58 /* Double+Extensions.swift */; };
 		052C86232B23C042000A3D58 /* DebugModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86222B23C042000A3D58 /* DebugModeView.swift */; };
 		052C86252B23C9A0000A3D58 /* PhysicsBodyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */; };
@@ -21,6 +22,8 @@
 		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF62B0C09EF00791897 /* SceneManager.swift */; };
 		0556EADA2B16E15B000583EC /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */; };
+		0561F9962B29148600260468 /* DnDDiceRollerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561F9952B29148600260468 /* DnDDiceRollerUITests.swift */; };
+		0561F9982B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */; };
 		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
 		0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */; };
 		05707CBB2B25105200DA242D /* DiceRotationToNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceRotationToNumberHelper.swift */; };
@@ -29,6 +32,16 @@
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
 		05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0561F9992B29148600260468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055375652AF9C68E00244A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0553756C2AF9C68E00244A63;
+			remoteInfo = DnDDiceRoller;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		05063EE42AFB0F1300308258 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -46,6 +59,9 @@
 		0554ACF32B0C023000791897 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0554ACF62B0C09EF00791897 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		0561F9932B29148600260468 /* DnDDiceRollerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDDiceRollerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0561F9952B29148600260468 /* DnDDiceRollerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerUITests.swift; sourceTree = "<group>"; };
+		0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
 		05707CBA2B25105200DA242D /* DiceRotationToNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRotationToNumberHelper.swift; sourceTree = "<group>"; };
@@ -57,6 +73,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		0553756A2AF9C68E00244A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0561F9902B29148600260468 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0553756F2AF9C68E00244A63 /* DnDDiceRoller */,
+				0561F9942B29148600260468 /* DnDDiceRollerUITests */,
 				0553756E2AF9C68E00244A63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */,
+				0561F9932B29148600260468 /* DnDDiceRollerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +148,15 @@
 				0554ACF32B0C023000791897 /* MainViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0561F9942B29148600260468 /* DnDDiceRollerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0561F9952B29148600260468 /* DnDDiceRollerUITests.swift */,
+				0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */,
+			);
+			path = DnDDiceRollerUITests;
 			sourceTree = "<group>";
 		};
 		0566BADD2B0EDE7B00D10E11 /* Helpers */ = {
@@ -178,6 +212,24 @@
 			productReference = 0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0561F9922B29148600260468 /* DnDDiceRollerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0561F99D2B29148600260468 /* Build configuration list for PBXNativeTarget "DnDDiceRollerUITests" */;
+			buildPhases = (
+				0561F98F2B29148600260468 /* Sources */,
+				0561F9902B29148600260468 /* Frameworks */,
+				0561F9912B29148600260468 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0561F99A2B29148600260468 /* PBXTargetDependency */,
+			);
+			name = DnDDiceRollerUITests;
+			productName = DnDDiceRollerUITests;
+			productReference = 0561F9932B29148600260468 /* DnDDiceRollerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,6 +242,10 @@
 				TargetAttributes = {
 					0553756C2AF9C68E00244A63 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					0561F9922B29148600260468 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 0553756C2AF9C68E00244A63;
 					};
 				};
 			};
@@ -207,6 +263,7 @@
 			projectRoot = "";
 			targets = (
 				0553756C2AF9C68E00244A63 /* DnDDiceRoller */,
+				0561F9922B29148600260468 /* DnDDiceRollerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +276,13 @@
 				05063EF42AFD7E0A00308258 /* SceneKitAssets.scnassets in Resources */,
 				05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */,
 				05063EEC2AFC5F7D00308258 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0561F9912B29148600260468 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +314,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0561F98F2B29148600260468 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051C03772B298465005C89F3 /* NodeType.swift in Sources */,
+				0561F9982B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift in Sources */,
+				0561F9962B29148600260468 /* DnDDiceRollerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0561F99A2B29148600260468 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0553756C2AF9C68E00244A63 /* DnDDiceRoller */;
+			targetProxy = 0561F9992B29148600260468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		055375792AF9C69000244A63 /* Debug */ = {
@@ -434,6 +516,48 @@
 			};
 			name = Release;
 		};
+		0561F99B2B29148600260468 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R26Z4H79BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.volodymyr.parunakian.DnDDiceRollerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DnDDiceRoller;
+			};
+			name = Debug;
+		};
+		0561F99C2B29148600260468 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R26Z4H79BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.volodymyr.parunakian.DnDDiceRollerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DnDDiceRoller;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +575,15 @@
 			buildConfigurations = (
 				0553757C2AF9C69000244A63 /* Debug */,
 				0553757D2AF9C69000244A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0561F99D2B29148600260468 /* Build configuration list for PBXNativeTarget "DnDDiceRollerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0561F99B2B29148600260468 /* Debug */,
+				0561F99C2B29148600260468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

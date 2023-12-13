@@ -22,6 +22,7 @@ struct DiceTypeMenuView: View {
                         Label("", image: "D10")
                     }
                 })
+                .accessibilityIdentifier(dice.rawValue)
             }
         }
     }

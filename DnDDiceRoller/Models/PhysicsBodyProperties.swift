@@ -19,7 +19,10 @@ struct PhysicsBodyProperties {
     var restitution = 0.5
    
     func apply(to node: SCNNode?) {
-        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape())
+        guard let node = node else {
+            return
+        }
+        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: node.geometry!))
         body.allowsResting = allowsResting
         body.angularDamping = angularDamping
         body.categoryBitMask = categoryBitMask
@@ -30,7 +33,7 @@ struct PhysicsBodyProperties {
         body.mass = mass
         body.restitution = restitution
         
-        node?.physicsBody = body
+        node.physicsBody = body
     }
 
     // TODO: make mass and all of other parameters dependant on material
@@ -40,7 +43,7 @@ struct PhysicsBodyProperties {
         properties.angularDamping = 0.05
         properties.damping = 0.1
         properties.friction = 1
-        properties.mass = 3.4
+        properties.mass = 1
         properties.restitution = 0.9
         
         properties.categoryBitMask = 1

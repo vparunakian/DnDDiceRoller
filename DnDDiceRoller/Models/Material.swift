@@ -11,6 +11,7 @@ enum Material: String, CaseIterable {
     case plastic = "Plastic008"
     case wood = "Wood049"
     case metalRefl = "Metal012"
+    case metalGold = "Metal034"
     case metalMatte = "Metal046A"
     
     var displayName: String {
@@ -19,10 +20,27 @@ enum Material: String, CaseIterable {
             return "Blue Plastic"
         case .wood:
             return "Wood"
+        case .metalGold:
+            return "Gold Reflective Metal"
         case .metalRefl:
             return "Reflective Metal"
         case .metalMatte:
             return "Matte Metal"
+        }
+    }
+    
+    var decalColor: UIColor {
+        switch self {
+        case .plastic:
+            return UIColor(red: 212/255, green: 175/255, blue: 55/255, alpha: 1.0)
+        case .wood:
+            return .black
+        case .metalGold:
+            return .black
+        case .metalRefl:
+            return .black
+        case .metalMatte:
+            return .white
         }
     }
         
@@ -35,6 +53,12 @@ enum Material: String, CaseIterable {
         material.roughness.contents = UIImage(named: "\(rawValue)_roughness")
         material.normal.contents = UIImage(named: "\(rawValue)_normal")
         material.metalness.contents = UIImage(named: "\(rawValue)_metalness")
+        
+        guard let material = node.geometry?.material(named: "decal") else {
+            return
+        }
+        
+        material.multiply.contents = decalColor
     }
     
     static func textureRepeat(for node: SCNNode?) {
@@ -44,7 +68,7 @@ enum Material: String, CaseIterable {
         [material.diffuse, material.roughness, material.normal].forEach {
             $0.wrapS = .repeat
             $0.wrapT = .repeat
-            $0.contentsTransform = SCNMatrix4MakeScale(4, 4, 0)
+            $0.contentsTransform = SCNMatrix4MakeScale(10, 10, 0)
         }
     }
 }

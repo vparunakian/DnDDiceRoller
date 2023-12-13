@@ -32,11 +32,11 @@ enum DiceAnglesToNumberHelper {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (-0.1...0.1, -0.1...0.1):
             return 1
-        case (-0.1...0.1, 1.9...1.91):  // X: -1.24963, Y: -0.84498, Z: -3.12754
+        case (-0.1...0.1, 1.9...1.99):
             return 2
-        case (0.95...0.96, -2.18...(-2.17)): // 2.47611, Y: -0.61734, Z: 1.60793  -1.90722, Y: 0.18326, Z: 0.97682
+        case (0.9...0.99, -2.2...(-2.1)):
             return 3
-        case (-0.96...(-0.95), -2.19...(-2.18)):
+        case (-0.99...(-0.9), -2.2...(-2.1)):
             return 4
         default:
             return -1
@@ -45,17 +45,17 @@ enum DiceAnglesToNumberHelper {
     
     private static func convertD6(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
-        case (-0.1...0.1, 1.55...1.58):
+        case (-0.1...0.1, 1.5...1.6):
             return 1
-        case (-0.1...0.1, -3.15...(-3.12)), (-0.1...0.1, 3.12...3.15):
+        case (-0.1...0.1, -3.15...(-3)), (-0.1...0.1, 3...3.15):
             return 2
-        case (-1.58...(-1.57), -0.1...0.1):
+        case (-1.6...(-1.5), -0.1...0.1):
             return 3
-        case (1.57...1.58, -0.1...0.1):
+        case (1.5...1.6, -0.1...0.1):
             return 4
         case (-0.1...0.1, -0.1...0.1):
             return 5
-        case (-0.1...0.1, -1.58...(-1.55)):
+        case (-0.1...0.1, -1.6...(-1.5)):
             return 6
         default:
             return -1
@@ -87,25 +87,25 @@ enum DiceAnglesToNumberHelper {
     
     private static func convertD10(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
-        case (0.42...0.49, 0.8...0.83):
+        case (0.4...0.5, 0.8...0.85):
             return 1
-        case (0.42...0.49, -2.35...(-2.3)):
+        case (0.4...0.5, -2.35...(-2.3)):
             return 2
-        case (-0.87...(-0.86), -0.37...(-0.36)):
+        case (-0.87...(-0.85), -0.38...(-0.34)):
             return 3
         case (-0.1...1.0, 2.2...2.36):
             return 4
-        case (-0.1...1.0, -0.92...(-0.91)):
+        case (-0.1...1.0, -0.92...(-0.9)):
             return 5
-        case (0.85...0.87, 2.7...2.78):
+        case (0.85...0.87, 2.7...2.8):
             return 6
         case (-0.5...(-0.43), 0.78...0.82):
             return 7
         case (-0.5...(-0.43), -2.35...(-2.3)):
             return 8
-        case (0.85...0.87, -0.38...(-0.37)):
+        case (0.85...0.87, -0.38...(-0.34)):
             return 9
-        case (-0.87...(-0.86), 2.7...2.78):
+        case (-0.87...(-0.85), 2.7...2.8):
             return 10
         default:
             return -1
