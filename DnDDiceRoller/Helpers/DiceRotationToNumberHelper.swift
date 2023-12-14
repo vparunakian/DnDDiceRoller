@@ -23,6 +23,8 @@ enum DiceAnglesToNumberHelper {
             return convertD10(dice)
         case .d12:
             return convertD12(dice)
+        case .d20:
+            return convertD20(dice)
         default:
             return -1
         }
@@ -113,6 +115,37 @@ enum DiceAnglesToNumberHelper {
     }
     
     private static func convertD12(_ dice: SCNNode) -> Int {
+        switch (dice.eulerAngles.y, dice.eulerAngles.z) {
+        case (-0.1...0.1, -0.1...1.0):
+            return 1
+        case (0.9...1.1, -0.6...(-0.5)):
+            return 2
+        case (-0.6...(-0.5), -2.15...(-2)):
+            return 3
+        case (-0.1...0.1, -1.12...(-0.11)):
+            return 4
+        case (-0.6...(-0.5), 0.9...1.1):
+            return 5
+        case (-1.1...(-1), -0.6...(-0.5)):
+            return 6
+        case (0.9...1.1, 2.5...2.6):
+            return 7
+        case (0.5...0.6, -2.15...(-2)):
+            return 8
+        case (-0.1...0.1, 2...2.1):
+            return 9
+        case (0.5...0.6, 0.9...1.1):
+            return 10
+        case (-1.1...(-0.9), 2.6...2.7):
+            return 11
+        case (-0.1...0.1, 3...3.5):
+            return 12
+        default:
+            return -1
+        }
+    }
+    
+    private static func convertD20(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (-0.1...1.0, -0.1...1.0):
             return 1
