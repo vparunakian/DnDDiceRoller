@@ -1,5 +1,5 @@
 //
-//  DiceRotationToNumberHelper.swift
+//  DiceAnglesToNumberHelper.swift
 //  DnDDiceRoller
 //
 //  Created by Volodymyr Parunakian on 09.12.2023.

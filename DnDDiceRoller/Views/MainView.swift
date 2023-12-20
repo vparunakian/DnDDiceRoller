@@ -24,7 +24,11 @@ struct MainView: View {
                 .onTapGesture { location in
                     viewModel.throwDice()
                 }
+                .accessibilityIdentifier("MainScene")
                 ZStack {
+                    Text("\(viewModel.lastNumberDice)")
+                        .hidden()
+                        .accessibilityIdentifier("diceNumber")
                     if viewModel.isDebugMode {
                         DebugModeView(nodeStats: viewModel.nodeStats)
                             .frame(maxHeight: .infinity, alignment: .top)

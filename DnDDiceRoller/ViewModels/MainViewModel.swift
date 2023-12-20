@@ -25,6 +25,7 @@ final class MainViewModel: NSObject, ObservableObject {
     // TODO: should I move debug parameters somewhere else?
     @Published var isDebugMode = true
     private(set) var nodeStats = NodeStats()
+    @Published private(set) var lastNumberDice = -1
     
     override init() {
         super.init()
@@ -35,7 +36,7 @@ final class MainViewModel: NSObject, ObservableObject {
     private func setupMainScene() {
         let scene = mainSceneManager.scene
         scene.physicsWorld.contactDelegate = self
-        scene.physicsWorld.gravity = SCNVector3(x: 0, y: -9.9, z: 0)
+        scene.physicsWorld.gravity = SCNVector3(x: 0, y: -9.81, z: 0)
         mainScene = scene
         setupTable()
     }
@@ -93,9 +94,8 @@ final class MainViewModel: NSObject, ObservableObject {
         }
         
         // TODO: save to history of dice throws
-        let aaa = DiceAnglesToNumberHelper.convertAnglesToNumber(for: currentDice?.presentation)
-        print(currentDice?.presentation.eulerAngles ?? SCNVector3Zero)
-        print(aaa)
+        lastNumberDice = DiceAnglesToNumberHelper.convertAnglesToNumber(for: currentDice?.presentation)
+        print(lastNumberDice)
     }
     
     func spawnDice(type: NodeType) {
@@ -133,11 +133,11 @@ final class MainViewModel: NSObject, ObservableObject {
                                       z: .random(in: -.pi...(.pi)))
         let rotatingPush = SCNVector3(x: .random(in: -1...1), y: 0,
                                       z: .random(in: -1...1))
-        let atPoint = SCNVector3(x: 0.5, y: 0.5, z: 0.5)
+        let atVector = SCNVector3(x: .random(in: -0.5...0.5), y: .random(in: -0.5...0.5), z: .random(in: -0.5...0.5))
         let linearPush = SCNVector3(x: .random(in: -1...1), y: -1.5,
                                     z: -10)
         
-        dice.physicsBody?.applyForce(rotatingPush, at: atPoint, asImpulse: true)
+        dice.physicsBody?.applyForce(rotatingPush, at: atVector, asImpulse: true)
         dice.physicsBody?.applyForce(linearPush, asImpulse: true)
     }
     
@@ -146,7 +146,7 @@ final class MainViewModel: NSObject, ObservableObject {
         camera?.constraints?.removeAll()
         camera?.removeAllActions()
         camera?.position = SCNVector3(0, 4.5, 5)
-        camera?.eulerAngles = SCNVector3(x: -0.34907, y: 0, z: 0)
+        camera?.eulerAngles = SCNVector3(x: -0.1, y: 0, z: 0)
 
         let distanceConstraint = SCNDistanceConstraint(target: dice)
         distanceConstraint.minimumDistance = 5
@@ -166,7 +166,7 @@ final class MainViewModel: NSObject, ObservableObject {
 
 extension MainViewModel: SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        renderer.showsStatistics = true
+        // renderer.showsStatistics = true
         // renderer.debugOptions = [.showWireframe, .showBoundingBoxes]
         DispatchQueue.main.async { [unowned self] in
             if let dice = currentDice?.presentation {

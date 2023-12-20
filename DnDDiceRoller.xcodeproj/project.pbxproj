@@ -11,12 +11,12 @@
 		05063EEC2AFC5F7D00308258 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EEB2AFC5F7D00308258 /* Assets.xcassets */; };
 		05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF12AFC674D00308258 /* Preview Assets.xcassets */; };
 		05063EF42AFD7E0A00308258 /* SceneKitAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF32AFD7E0A00308258 /* SceneKitAssets.scnassets */; };
-		051C03772B298465005C89F3 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
 		052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86202B229DDE000A3D58 /* Double+Extensions.swift */; };
 		052C86232B23C042000A3D58 /* DebugModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86222B23C042000A3D58 /* DebugModeView.swift */; };
 		052C86252B23C9A0000A3D58 /* PhysicsBodyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */; };
 		052C862A2B23E97D000A3D58 /* NodeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86292B23E97D000A3D58 /* NodeStats.swift */; };
 		054923DC2B05896300317F1F /* Decal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054923DB2B05896300317F1F /* Decal.swift */; };
+		054B70BA2B2C137E003781DE /* DnDDiceRollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */; };
 		055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */; };
 		055375732AF9C68E00244A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* MainView.swift */; };
 		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
@@ -26,7 +26,7 @@
 		0561F9982B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */; };
 		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
 		0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */; };
-		05707CBB2B25105200DA242D /* DiceRotationToNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceRotationToNumberHelper.swift */; };
+		05707CBB2B25105200DA242D /* DiceAnglesToNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */; };
 		0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11A2B0D59DC00C40A06 /* SceneType.swift */; };
 		0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */; };
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
@@ -34,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		054B70BB2B2C137E003781DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 055375652AF9C68E00244A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0553756C2AF9C68E00244A63;
+			remoteInfo = DnDDiceRoller;
+		};
 		0561F9992B29148600260468 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 055375652AF9C68E00244A63 /* Project object */;
@@ -53,6 +60,8 @@
 		052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyProperties.swift; sourceTree = "<group>"; };
 		052C86292B23E97D000A3D58 /* NodeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStats.swift; sourceTree = "<group>"; };
 		054923DB2B05896300317F1F /* Decal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decal.swift; sourceTree = "<group>"; };
+		054B70B72B2C137E003781DE /* DnDDiceRollerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDDiceRollerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerTests.swift; sourceTree = "<group>"; };
 		0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDDiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerApp.swift; sourceTree = "<group>"; };
 		055375722AF9C68E00244A63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -64,7 +73,7 @@
 		0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
-		05707CBA2B25105200DA242D /* DiceRotationToNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceRotationToNumberHelper.swift; sourceTree = "<group>"; };
+		05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAnglesToNumberHelper.swift; sourceTree = "<group>"; };
 		0575D11A2B0D59DC00C40A06 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneManager.swift; sourceTree = "<group>"; };
 		0575D11E2B0D73AA00C40A06 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
@@ -72,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		054B70B42B2C137E003781DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0553756A2AF9C68E00244A63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,11 +124,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		054B70B82B2C137E003781DE /* DnDDiceRollerTests */ = {
+			isa = PBXGroup;
+			children = (
+				054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */,
+			);
+			path = DnDDiceRollerTests;
+			sourceTree = "<group>";
+		};
 		055375642AF9C68E00244A63 = {
 			isa = PBXGroup;
 			children = (
 				0553756F2AF9C68E00244A63 /* DnDDiceRoller */,
 				0561F9942B29148600260468 /* DnDDiceRollerUITests */,
+				054B70B82B2C137E003781DE /* DnDDiceRollerTests */,
 				0553756E2AF9C68E00244A63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +147,7 @@
 			children = (
 				0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */,
 				0561F9932B29148600260468 /* DnDDiceRollerUITests.xctest */,
+				054B70B72B2C137E003781DE /* DnDDiceRollerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,7 +191,7 @@
 				0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */,
 				0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */,
 				052C86202B229DDE000A3D58 /* Double+Extensions.swift */,
-				05707CBA2B25105200DA242D /* DiceRotationToNumberHelper.swift */,
+				05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,6 +221,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		054B70B62B2C137E003781DE /* DnDDiceRollerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 054B70BD2B2C137E003781DE /* Build configuration list for PBXNativeTarget "DnDDiceRollerTests" */;
+			buildPhases = (
+				054B70B32B2C137E003781DE /* Sources */,
+				054B70B42B2C137E003781DE /* Frameworks */,
+				054B70B52B2C137E003781DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				054B70BC2B2C137E003781DE /* PBXTargetDependency */,
+			);
+			name = DnDDiceRollerTests;
+			productName = DnDDiceRollerTests;
+			productReference = 054B70B72B2C137E003781DE /* DnDDiceRollerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0553756C2AF9C68E00244A63 /* DnDDiceRoller */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0553757B2AF9C69000244A63 /* Build configuration list for PBXNativeTarget "DnDDiceRoller" */;
@@ -240,6 +284,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					054B70B62B2C137E003781DE = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 0553756C2AF9C68E00244A63;
+					};
 					0553756C2AF9C68E00244A63 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -264,11 +312,19 @@
 			targets = (
 				0553756C2AF9C68E00244A63 /* DnDDiceRoller */,
 				0561F9922B29148600260468 /* DnDDiceRollerUITests */,
+				054B70B62B2C137E003781DE /* DnDDiceRollerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		054B70B52B2C137E003781DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0553756B2AF9C68E00244A63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -289,6 +345,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		054B70B32B2C137E003781DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				054B70BA2B2C137E003781DE /* DnDDiceRollerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		055375692AF9C68E00244A63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,7 +368,7 @@
 				0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */,
 				0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */,
 				052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */,
-				05707CBB2B25105200DA242D /* DiceRotationToNumberHelper.swift in Sources */,
+				05707CBB2B25105200DA242D /* DiceAnglesToNumberHelper.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
 				05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */,
 				0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */,
@@ -318,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051C03772B298465005C89F3 /* NodeType.swift in Sources */,
 				0561F9982B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift in Sources */,
 				0561F9962B29148600260468 /* DnDDiceRollerUITests.swift in Sources */,
 			);
@@ -327,6 +390,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		054B70BC2B2C137E003781DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0553756C2AF9C68E00244A63 /* DnDDiceRoller */;
+			targetProxy = 054B70BB2B2C137E003781DE /* PBXContainerItemProxy */;
+		};
 		0561F99A2B29148600260468 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0553756C2AF9C68E00244A63 /* DnDDiceRoller */;
@@ -335,6 +403,44 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		054B70BE2B2C137E003781DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R26Z4H79BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.volodymyr.parunakian.DnDDiceRollerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDDiceRoller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DnDDiceRoller";
+			};
+			name = Debug;
+		};
+		054B70BF2B2C137E003781DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R26Z4H79BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.volodymyr.parunakian.DnDDiceRollerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDDiceRoller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DnDDiceRoller";
+			};
+			name = Release;
+		};
 		055375792AF9C69000244A63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -561,6 +667,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		054B70BD2B2C137E003781DE /* Build configuration list for PBXNativeTarget "DnDDiceRollerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				054B70BE2B2C137E003781DE /* Debug */,
+				054B70BF2B2C137E003781DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		055375682AF9C68E00244A63 /* Build configuration list for PBXProject "DnDDiceRoller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
