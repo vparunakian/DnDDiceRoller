@@ -8,6 +8,6 @@
 import Foundation
 
 enum SceneType: String {
-    case main = "Main.scn"
     case dice = "Dice.scn"
+    case main = "Main.scn"
 }

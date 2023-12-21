@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "8A3D72C2-10D5-4081-93F9-6B2CE86F22A9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DnDDiceRoller.xcodeproj",
+      "identifier" : "0553756C2AF9C68E00244A63",
+      "name" : "DnDDiceRoller"
+    }
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DnDDiceRoller.xcodeproj",
+        "identifier" : "0561F9922B29148600260468",
+        "name" : "DnDDiceRollerUITests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DnDDiceRoller.xcodeproj",
+        "identifier" : "054B70B62B2C137E003781DE",
+        "name" : "DnDDiceRollerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

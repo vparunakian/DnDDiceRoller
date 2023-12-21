@@ -9,8 +9,8 @@ import SceneKit
 
 extension SCNNode {
     var nodeType: NodeType {
-        guard let name = name, let nodeType = NodeType(rawValue: name) else {
-            return .table
+        guard let name, let nodeType = NodeType(rawValue: name) else {
+            return .unknown
         }
         return nodeType
     }

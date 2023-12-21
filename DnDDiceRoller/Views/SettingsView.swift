@@ -13,18 +13,18 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Picker("Dice Material", selection: $viewModel.material) {
-                ForEach(Material.allCases) {
-                    Text($0.displayName).tag($0)
+                ForEach(Material.allCases) { material in
+                    Text(material.displayName).tag(material)
                 }
             }
             Picker("Dice Font", selection: $viewModel.decal) {
-                ForEach(Decal.allCases) {
-                    Text($0.displayName).tag($0)
+                ForEach(Decal.allCases) { decal in
+                    Text(decal.displayName).tag(decal)
                 }
             }
-            Toggle(isOn: $viewModel.isDebugMode, label: {
+            Toggle(isOn: $viewModel.isDebugMode) {
                 Text("Debug Mode")
-            })
+            }
         }
     }
 }

@@ -5,9 +5,9 @@
 //  Created by Volodymyr Parunakian on 12.12.2023.
 //
 
-//import XCTest
+// import XCTest
 //
-//final class DnDDiceRollerUITestsLaunchTests: XCTestCase {
+// final class DnDDiceRollerUITestsLaunchTests: XCTestCase {
 //
 //    override class var runsForEachTargetApplicationUIConfiguration: Bool {
 //        true
@@ -29,4 +29,4 @@
 //        attachment.lifetime = .keepAlways
 //        add(attachment)
 //    }
-//}
+// }

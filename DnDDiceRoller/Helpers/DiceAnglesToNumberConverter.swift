@@ -1,5 +1,5 @@
 //
-//  DiceAnglesToNumberHelper.swift
+//  DiceAnglesToNumberConverter.swift
 //  DnDDiceRoller
 //
 //  Created by Volodymyr Parunakian on 09.12.2023.
@@ -7,9 +7,10 @@
 
 import SceneKit
 
-enum DiceAnglesToNumberHelper {
+// swiftlint:disable cyclomatic_complexity
+enum DiceAnglesToNumberConverter {
     static func convertAnglesToNumber(for dice: SCNNode?) -> Int {
-        guard let dice = dice else {
+        guard let dice else {
             return -1
         }
         switch dice.nodeType {
@@ -29,22 +30,22 @@ enum DiceAnglesToNumberHelper {
             return -1
         }
     }
-    
+
     private static func convertD4(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
-        case (-0.1...0.1, -0.1...0.1):
+        case (-0.05...0.05, -0.1...0.1):
             return 1
-        case (-0.1...0.1, 1.9...1.99):
+        case (-0.05...0.05, 1.9...2.0):
             return 2
-        case (0.9...0.99, -2.2...(-2.1)):
+        case (0.9...1.0, -2.2...(-2.1)):
             return 3
-        case (-0.99...(-0.9), -2.2...(-2.1)):
+        case (-1.0...(-0.9), -2.2...(-2.1)):
             return 4
         default:
             return -1
         }
     }
-    
+
     private static func convertD6(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (-0.1...0.1, 1.5...1.6):
@@ -63,7 +64,7 @@ enum DiceAnglesToNumberHelper {
             return -1
         }
     }
-    
+
     private static func convertD8(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (0.6...0.62, 0.75...0.8):
@@ -86,7 +87,7 @@ enum DiceAnglesToNumberHelper {
             return -1
         }
     }
-    
+
     private static func convertD10(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (0.4...0.5, 0.8...0.9):
@@ -113,7 +114,7 @@ enum DiceAnglesToNumberHelper {
             return -1
         }
     }
-    
+
     private static func convertD12(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (-0.1...0.1, -0.1...1.0):
@@ -144,7 +145,7 @@ enum DiceAnglesToNumberHelper {
             return -1
         }
     }
-    
+
     private static func convertD20(_ dice: SCNNode) -> Int {
         switch (dice.eulerAngles.y, dice.eulerAngles.z) {
         case (-0.1...0.1, -0.1...0.1):
@@ -192,3 +193,4 @@ enum DiceAnglesToNumberHelper {
         }
     }
 }
+// swiftlint:enable cyclomatic_complexity

@@ -1,5 +1,5 @@
 //
-//  DebugModeView.swift
+//  DebugTextView.swift
 //  DnDDiceRoller
 //
 //  Created by Volodymyr Parunakian on 08.12.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct DebugModeView: View {
+struct DebugTextView: View {
     @ObservedObject var nodeStats: NodeStats
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -28,5 +28,5 @@ struct DebugModeView: View {
 }
 
 #Preview {
-    DebugModeView(nodeStats: NodeStats())
+    DebugTextView(nodeStats: NodeStats())
 }

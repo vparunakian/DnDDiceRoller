@@ -9,44 +9,45 @@ import SceneKit
 import SwiftUI
 
 struct MainView: View {
+    private enum Constants {
+        static let settingsWidth = 400.0
+        static let settingsHeight = 150.0
+    }
+
     @EnvironmentObject private var viewModel: MainViewModel
     @State private var showingSettings = false
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
-                SceneView(scene: viewModel.mainScene,
-                          pointOfView: viewModel.camera, 
-                          options: [],
-                          delegate: viewModel)
+                SceneView(
+                    scene: viewModel.mainScene,
+                    pointOfView: viewModel.camera,
+                    options: [],
+                    delegate: viewModel
+                )
                 .background(.secondary)
                 .edgesIgnoringSafeArea(.all)
-                .onTapGesture { location in
+                .onTapGesture { _ in
                     viewModel.throwDice()
                 }
+                .accessibilityAddTraits(.isButton)
                 .accessibilityIdentifier("MainScene")
-                ZStack {
-                    Text("\(viewModel.lastNumberDice)")
-                        .hidden()
-                        .accessibilityIdentifier("diceNumber")
-                    if viewModel.isDebugMode {
-                        DebugModeView(nodeStats: viewModel.nodeStats)
-                            .frame(maxHeight: .infinity, alignment: .top)
-                    }
-                    DiceTypeMenuView()
-                        .frame(maxHeight: .infinity, alignment: .bottom)
-                        .padding()
-                }
+
+                DebugView()
+                DiceTypeMenuView()
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .padding()
             }
             .toolbar {
                 Button(action: {
                     showingSettings.toggle()
-                }) {
+                }, label: {
                     Label("", systemImage: "gearshape.fill")
-                }
+                })
                 .popover(isPresented: $showingSettings) {
                     SettingsView()
-                        .frame(minWidth: 400, minHeight: 150)
+                        .frame(minWidth: Constants.settingsWidth, minHeight: Constants.settingsHeight)
                 }
             }
         }

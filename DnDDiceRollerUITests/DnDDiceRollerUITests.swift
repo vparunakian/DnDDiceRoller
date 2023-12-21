@@ -8,7 +8,6 @@
 import XCTest
 
 final class DnDDiceRollerUITests: XCTestCase {
-
     override func setUpWithError() throws {
         continueAfterFailure = false
         XCUIDevice.shared.orientation = .portrait
@@ -17,7 +16,8 @@ final class DnDDiceRollerUITests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let app = XCUIApplication()
+        app.terminate()
     }
 
 //    func testLaunchPerformance() throws {
@@ -27,7 +27,7 @@ final class DnDDiceRollerUITests: XCTestCase {
 //            }
 //        }
 //    }
-    
+
     func testButtons() throws {
         let app = XCUIApplication()
 
@@ -36,18 +36,17 @@ final class DnDDiceRollerUITests: XCTestCase {
             XCTAssertTrue(button.waitForExistence(timeout: 0.1))
             button.tap()
         }
-        
+
         let scene = app.otherElements["MainScene"]
         scene.tap()
-        
-        
+
 //        let screenshot = app.screenshot()
 //        let attachment = XCTAttachment(screenshot: screenshot)
 //        attachment.name = "Oops"
 //        attachment.lifetime = .keepAlways
 //        add(attachment)
     }
-    
+
 //    func textD6Throw() throws {
 //        let app = XCUIApplication()
 //        

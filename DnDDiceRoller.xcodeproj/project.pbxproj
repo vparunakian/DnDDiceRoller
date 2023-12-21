@@ -12,24 +12,26 @@
 		05063EF22AFC674D00308258 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF12AFC674D00308258 /* Preview Assets.xcassets */; };
 		05063EF42AFD7E0A00308258 /* SceneKitAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 05063EF32AFD7E0A00308258 /* SceneKitAssets.scnassets */; };
 		052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86202B229DDE000A3D58 /* Double+Extensions.swift */; };
-		052C86232B23C042000A3D58 /* DebugModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86222B23C042000A3D58 /* DebugModeView.swift */; };
+		052C86232B23C042000A3D58 /* DebugTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86222B23C042000A3D58 /* DebugTextView.swift */; };
 		052C86252B23C9A0000A3D58 /* PhysicsBodyProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */; };
 		052C862A2B23E97D000A3D58 /* NodeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C86292B23E97D000A3D58 /* NodeStats.swift */; };
 		054923DC2B05896300317F1F /* Decal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054923DB2B05896300317F1F /* Decal.swift */; };
-		054B70BA2B2C137E003781DE /* DnDDiceRollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */; };
 		055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */; };
 		055375732AF9C68E00244A63 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055375722AF9C68E00244A63 /* MainView.swift */; };
-		0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF62B0C09EF00791897 /* SceneManager.swift */; };
 		0556EADA2B16E15B000583EC /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */; };
 		0561F9962B29148600260468 /* DnDDiceRollerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561F9952B29148600260468 /* DnDDiceRollerUITests.swift */; };
 		0561F9982B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */; };
 		0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */; };
 		0566BADF2B0EDE8800D10E11 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */; };
-		05707CBB2B25105200DA242D /* DiceAnglesToNumberHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */; };
 		0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11A2B0D59DC00C40A06 /* SceneType.swift */; };
 		0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */; };
 		0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575D11E2B0D73AA00C40A06 /* NodeType.swift */; };
+		058D38DE2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D38DD2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift */; };
+		058D38E22B33818C00E03EF8 /* NodeTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */; };
+		058D38E42B33858900E03EF8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
+		058D38E52B33859100E03EF8 /* DiceAnglesToNumberConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */; };
+		058D38E72B33A93500E03EF8 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D38E62B33A93500E03EF8 /* DebugView.swift */; };
 		05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +58,11 @@
 		05063EF12AFC674D00308258 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05063EF32AFD7E0A00308258 /* SceneKitAssets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SceneKitAssets.scnassets; sourceTree = "<group>"; };
 		052C86202B229DDE000A3D58 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
-		052C86222B23C042000A3D58 /* DebugModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugModeView.swift; sourceTree = "<group>"; };
+		052C86222B23C042000A3D58 /* DebugTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTextView.swift; sourceTree = "<group>"; };
 		052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyProperties.swift; sourceTree = "<group>"; };
 		052C86292B23E97D000A3D58 /* NodeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeStats.swift; sourceTree = "<group>"; };
 		054923DB2B05896300317F1F /* Decal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decal.swift; sourceTree = "<group>"; };
 		054B70B72B2C137E003781DE /* DnDDiceRollerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDDiceRollerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerTests.swift; sourceTree = "<group>"; };
 		0553756D2AF9C68E00244A63 /* DnDDiceRoller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDDiceRoller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerApp.swift; sourceTree = "<group>"; };
 		055375722AF9C68E00244A63 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,10 +74,14 @@
 		0561F9972B29148600260468 /* DnDDiceRollerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDDiceRollerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
-		05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAnglesToNumberHelper.swift; sourceTree = "<group>"; };
+		05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAnglesToNumberConverter.swift; sourceTree = "<group>"; };
 		0575D11A2B0D59DC00C40A06 /* SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneType.swift; sourceTree = "<group>"; };
 		0575D11C2B0D72EE00C40A06 /* MainSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneManager.swift; sourceTree = "<group>"; };
 		0575D11E2B0D73AA00C40A06 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
+		058D38DD2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceAnglesToNumberTests.swift; sourceTree = "<group>"; };
+		058D38DF2B337FE200E03EF8 /* DnDDiceRoller.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DnDDiceRoller.xctestplan; sourceTree = "<group>"; };
+		058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeTests.swift; sourceTree = "<group>"; };
+		058D38E62B33A93500E03EF8 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTypeMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,9 +121,10 @@
 		052C86262B23D0F8000A3D58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				055375722AF9C68E00244A63 /* MainView.swift */,
+				052C86222B23C042000A3D58 /* DebugTextView.swift */,
+				058D38E62B33A93500E03EF8 /* DebugView.swift */,
 				05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */,
-				052C86222B23C042000A3D58 /* DebugModeView.swift */,
+				055375722AF9C68E00244A63 /* MainView.swift */,
 				0566BADB2B0EBB2E00D10E11 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -127,7 +133,8 @@
 		054B70B82B2C137E003781DE /* DnDDiceRollerTests */ = {
 			isa = PBXGroup;
 			children = (
-				054B70B92B2C137E003781DE /* DnDDiceRollerTests.swift */,
+				058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */,
+				058D38DD2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift */,
 			);
 			path = DnDDiceRollerTests;
 			sourceTree = "<group>";
@@ -135,9 +142,10 @@
 		055375642AF9C68E00244A63 = {
 			isa = PBXGroup;
 			children = (
+				058D38DF2B337FE200E03EF8 /* DnDDiceRoller.xctestplan */,
 				0553756F2AF9C68E00244A63 /* DnDDiceRoller */,
-				0561F9942B29148600260468 /* DnDDiceRollerUITests */,
 				054B70B82B2C137E003781DE /* DnDDiceRollerTests */,
+				0561F9942B29148600260468 /* DnDDiceRollerUITests */,
 				0553756E2AF9C68E00244A63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,7 +199,7 @@
 				0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */,
 				0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */,
 				052C86202B229DDE000A3D58 /* Double+Extensions.swift */,
-				05707CBA2B25105200DA242D /* DiceAnglesToNumberHelper.swift */,
+				05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +254,7 @@
 				055375692AF9C68E00244A63 /* Sources */,
 				0553756A2AF9C68E00244A63 /* Frameworks */,
 				0553756B2AF9C68E00244A63 /* Resources */,
+				058D38E32B33853700E03EF8 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -306,6 +315,8 @@
 				Base,
 			);
 			mainGroup = 055375642AF9C68E00244A63;
+			packageReferences = (
+			);
 			productRefGroup = 0553756E2AF9C68E00244A63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,12 +355,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		058D38E32B33853700E03EF8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		054B70B32B2C137E003781DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				054B70BA2B2C137E003781DE /* DnDDiceRollerTests.swift in Sources */,
+				058D38E22B33818C00E03EF8 /* NodeTypeTests.swift in Sources */,
+				058D38DE2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,19 +396,20 @@
 				054923DC2B05896300317F1F /* Decal.swift in Sources */,
 				052C86252B23C9A0000A3D58 /* PhysicsBodyProperties.swift in Sources */,
 				0575D11B2B0D59DC00C40A06 /* SceneType.swift in Sources */,
-				052C86232B23C042000A3D58 /* DebugModeView.swift in Sources */,
+				052C86232B23C042000A3D58 /* DebugTextView.swift in Sources */,
+				058D38E52B33859100E03EF8 /* DiceAnglesToNumberConverter.swift in Sources */,
 				0575D11F2B0D73AA00C40A06 /* NodeType.swift in Sources */,
 				055375732AF9C68E00244A63 /* MainView.swift in Sources */,
 				0554ACF72B0C09EF00791897 /* SceneManager.swift in Sources */,
 				0575D11D2B0D72EE00C40A06 /* MainSceneManager.swift in Sources */,
 				052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */,
-				05707CBB2B25105200DA242D /* DiceAnglesToNumberHelper.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
 				05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */,
 				0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */,
 				0556EADA2B16E15B000583EC /* SCNVector3+Extensions.swift in Sources */,
-				0554ACF42B0C023000791897 /* MainViewModel.swift in Sources */,
+				058D38E72B33A93500E03EF8 /* DebugView.swift in Sources */,
 				052C862A2B23E97D000A3D58 /* NodeStats.swift in Sources */,
+				058D38E42B33858900E03EF8 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +605,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DnDDiceRoller/Preview Content\"";
 				DEVELOPMENT_TEAM = R26Z4H79BY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.dice-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -601,6 +637,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"DnDDiceRoller/Preview Content\"";
 				DEVELOPMENT_TEAM = R26Z4H79BY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.dice-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DiceTypeMenuView: View {
     @EnvironmentObject private var viewModel: MainViewModel
+    private let spacing = 4.0
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: spacing) {
             ForEach(NodeType.allDice) { dice in
                 Button(action: {
                     viewModel.spawnDice(type: dice)
@@ -19,6 +20,7 @@ struct DiceTypeMenuView: View {
                     Image(dice.rawValue)
                         .resizable()
                         .scaledToFit()
+                        .accessibilityLabel(dice.rawValue)
                 })
                 .accessibilityIdentifier(dice.rawValue)
             }
