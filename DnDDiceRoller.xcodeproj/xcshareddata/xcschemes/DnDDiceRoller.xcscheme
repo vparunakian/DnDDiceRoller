@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:DnDDiceRoller.xctestplan"
+            reference = "container:DnDDiceRoller/DnDDiceRoller.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

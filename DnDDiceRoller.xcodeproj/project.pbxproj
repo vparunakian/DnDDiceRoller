@@ -144,7 +144,6 @@
 		055375642AF9C68E00244A63 = {
 			isa = PBXGroup;
 			children = (
-				058D38DF2B337FE200E03EF8 /* DnDDiceRoller.xctestplan */,
 				0553756F2AF9C68E00244A63 /* DnDDiceRoller */,
 				054B70B82B2C137E003781DE /* DnDDiceRollerTests */,
 				0561F9942B29148600260468 /* DnDDiceRollerUITests */,
@@ -166,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				055375702AF9C68E00244A63 /* DnDDiceRollerApp.swift */,
+				058D38DF2B337FE200E03EF8 /* DnDDiceRoller.xctestplan */,
 				05063EF32AFD7E0A00308258 /* SceneKitAssets.scnassets */,
 				05063EEB2AFC5F7D00308258 /* Assets.xcassets */,
 				0566BADD2B0EDE7B00D10E11 /* Helpers */,

@@ -35,9 +35,8 @@ final class MainViewModel: NSObject, ObservableObject {
     private func setupMainScene() {
         let scene = sceneManager.scene
         scene.physicsWorld.contactDelegate = self
-        scene.physicsWorld.gravity = SCNVector3(x: 0, y: -9.81, z: 0)
+        scene.physicsWorld.gravity = SCNVector3(x: 0, y: -9.805, z: 0)
         mainScene = scene
-        setupTable()
     }
 
     private func setupCameraPanning() {
@@ -52,19 +51,6 @@ final class MainViewModel: NSObject, ObservableObject {
             .store(in: &subcriptions)
     }
 
-    private func setupTable() {
-        guard let table = sceneManager.getNode(type: .table) else {
-            return
-        }
-
-        let shape = SCNPhysicsShape(geometry: SCNPlane(width: 80, height: 80))
-        let body = SCNPhysicsBody(type: .static, shape: shape)
-        body.categoryBitMask = 64
-        body.collisionBitMask = 1
-        body.contactTestBitMask = 1
-        table.physicsBody = body
-    }
-
     private func removeDiceIfNeeded() {
         guard currentDice != nil else {
             return
@@ -75,11 +61,11 @@ final class MainViewModel: NSObject, ObservableObject {
 
     private func setupCameraFollowing(dice: SCNNode) {
         sceneManager.resetCamera()
-        sceneManager.cameraFollows(node: dice)
+        sceneManager.cameraFollow(node: dice)
     }
 
     private func panCameraToDice() {
-        sceneManager.cameraPansAndOverlooks(node: currentDice)
+        sceneManager.cameraPanAndOverlook(node: currentDice)
 
         // TODO: save to history of dice throws
         lastNumberDice = DiceAnglesToNumberConverter.convertAnglesToNumber(for: currentDice?.presentation)

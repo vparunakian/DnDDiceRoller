@@ -22,6 +22,7 @@ final class MainSceneManager {
             fatalError("Scene is missing")
         }
         self.scene = scene
+        self.setupFloorNode()
     }
 
     private func setupDefaultCamera() -> AccessibleNode {
@@ -37,6 +38,23 @@ final class MainSceneManager {
         return cameraNode
     }
 
+    private func setupFloorNode() {
+        let floor = AccessibleNode()
+        floor.geometry = SCNPlane(width: 100, height: 100)
+        floor.name = "floor"
+        floor.accessibilityIdentifier = floor.name
+        floor.position = SCNVector3(x: 0, y: 0, z: -35)
+        floor.eulerAngles = SCNVector3(x: -.pi / 2, y: 0, z: 0)
+        PhysicsBodyProperties.floor.apply(to: floor)
+
+        let material = SCNMaterial()
+        material.name = "main"
+        material.lightingModel = .physicallyBased
+        material.diffuse.contents = UIColor.blackWhite
+        floor.geometry?.insertMaterial(material, at: 0)
+        scene.rootNode.addChildNode(floor)
+    }
+
     func getNode(type: NodeType) -> SCNNode? {
         scene.rootNode.childNode(withName: type.rawValue, recursively: false)
     }
@@ -48,22 +66,23 @@ final class MainSceneManager {
         camera.eulerAngles = DefaultCamera.eulerAngels
     }
 
-    func cameraFollows(node: SCNNode?) {
+    func cameraFollow(node: SCNNode?) {
         let distanceConstraint = SCNDistanceConstraint(target: node)
-        distanceConstraint.minimumDistance = 5
-        distanceConstraint.maximumDistance = 10
+        distanceConstraint.minimumDistance = 6
+        distanceConstraint.maximumDistance = 12
         distanceConstraint.influenceFactor = 0.8
 
         let lookAtConstraint = SCNLookAtConstraint(target: node)
         lookAtConstraint.isGimbalLockEnabled = true
+        lookAtConstraint.influenceFactor = 0.9
 
         let accelerationConstraint = SCNAccelerationConstraint()
-        accelerationConstraint.decelerationDistance = 0.5
+        accelerationConstraint.decelerationDistance = 8
 
         camera.constraints = [distanceConstraint, lookAtConstraint, accelerationConstraint]
     }
 
-    func cameraPansAndOverlooks(node: SCNNode?) {
+    func cameraPanAndOverlook(node: SCNNode?) {
         guard let presentation = node?.presentation else {
             return
         }
@@ -75,17 +94,17 @@ final class MainSceneManager {
         if presentation.nodeType == .d4 {
             moveVector = SCNVector3(
                 x: presentation.position.x,
-                y: 3,
-                z: presentation.position.z + 2
+                y: 3.5,
+                z: presentation.position.z + 2.5
             )
         } else {
             moveVector = SCNVector3(
                 x: presentation.position.x,
-                y: 4,
+                y: 4.5,
                 z: presentation.position.z
             )
         }
-        let move = SCNAction.move(to: moveVector, duration: 0.33)
+        let move = SCNAction.move(to: moveVector, duration: 0.4)
         camera.runAction(move)
         camera.constraints = [lookAtConstraint]
     }

@@ -34,7 +34,7 @@ enum Material: String, CaseIterable, Identifiable {
     var decalColor: UIColor {
         switch self {
         case .plastic:
-            return UIColor(red: 0.83, green: 0.686, blue: 0.216, alpha: 1.0)
+            return .oldGold
         case .wood:
             return .black
         case .metalGold:

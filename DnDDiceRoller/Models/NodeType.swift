@@ -15,7 +15,7 @@ enum NodeType: String, Identifiable {
     case d4
     case d6
     case d8
-    case table
+    case floor
     case unknown
     case wall
 
