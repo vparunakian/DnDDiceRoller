@@ -9,12 +9,11 @@ import Combine
 import SceneKit
 
 final class MainViewModel: NSObject, ObservableObject {
-    private let mainSceneManager = MainSceneManager(scene: .main)
+    private(set) var sceneManager = MainSceneManager(scene: .main)
     private let diceSceneManager = MainSceneManager(scene: .dice)
 
     private var currentDice: SCNNode?
     private(set) var mainScene: SCNScene?
-    var camera: SCNNode?
 
     @Published var material = Material.plastic
     @Published var decal = Decal.sfpr
@@ -30,20 +29,18 @@ final class MainViewModel: NSObject, ObservableObject {
     override init() {
         super.init()
         self.setupMainScene()
-        self.setupCamera()
+        self.setupCameraPanning()
     }
 
     private func setupMainScene() {
-        let scene = mainSceneManager.scene
+        let scene = sceneManager.scene
         scene.physicsWorld.contactDelegate = self
         scene.physicsWorld.gravity = SCNVector3(x: 0, y: -9.81, z: 0)
         mainScene = scene
         setupTable()
     }
 
-    private func setupCamera() {
-        camera = mainSceneManager.getCamera()
-
+    private func setupCameraPanning() {
         isRestingSubject
             .share()
             .receive(on: DispatchQueue.main)
@@ -56,7 +53,7 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     private func setupTable() {
-        guard let table = mainSceneManager.getNode(type: .table) else {
+        guard let table = sceneManager.getNode(type: .table) else {
             return
         }
 
@@ -76,28 +73,13 @@ final class MainViewModel: NSObject, ObservableObject {
         currentDice = nil
     }
 
-    private func panCameraToDice() {
-        let lookAtConstraint = SCNLookAtConstraint(target: currentDice)
+    private func setupCameraFollowing(dice: SCNNode) {
+        sceneManager.resetCamera()
+        sceneManager.cameraFollows(node: dice)
+    }
 
-        if let presentation = currentDice?.presentation {
-            let moveVector: SCNVector3
-            if presentation.nodeType == .d4 {
-                moveVector = SCNVector3(
-                    x: presentation.position.x,
-                    y: 3,
-                    z: presentation.position.z + 2
-                )
-            } else {
-                moveVector = SCNVector3(
-                    x: presentation.position.x,
-                    y: 4,
-                    z: presentation.position.z
-                )
-            }
-            let move = SCNAction.move(to: moveVector, duration: 0.33)
-            camera?.runAction(move)
-            camera?.constraints = [lookAtConstraint]
-        }
+    private func panCameraToDice() {
+        sceneManager.cameraPansAndOverlooks(node: currentDice)
 
         // TODO: save to history of dice throws
         lastNumberDice = DiceAnglesToNumberConverter.convertAnglesToNumber(for: currentDice?.presentation)
@@ -125,7 +107,7 @@ final class MainViewModel: NSObject, ObservableObject {
 
         dice.runAction(rotateAction)
         mainScene?.rootNode.addChildNode(dice)
-        setupCameraConstraints(for: dice)
+        setupCameraFollowing(dice: dice)
     }
 
     func throwDice() {
@@ -134,7 +116,7 @@ final class MainViewModel: NSObject, ObservableObject {
         }
 
         dice.removeAllActions()
-        setupCameraConstraints(for: dice)
+        setupCameraFollowing(dice: dice)
 
         PhysicsBodyProperties.dice.apply(to: dice)
         dice.eulerAngles = SCNVector3(
@@ -161,26 +143,6 @@ final class MainViewModel: NSObject, ObservableObject {
         dice.physicsBody?.applyForce(rotatingPush, at: atVector, asImpulse: true)
         dice.physicsBody?.applyForce(linearPush, asImpulse: true)
     }
-
-    private func setupCameraConstraints(for dice: SCNNode) {
-        camera?.constraints?.removeAll()
-        camera?.removeAllActions()
-        camera?.position = SCNVector3(0, 4.5, 5)
-        camera?.eulerAngles = SCNVector3(x: -0.1, y: 0, z: 0)
-
-        let distanceConstraint = SCNDistanceConstraint(target: dice)
-        distanceConstraint.minimumDistance = 5
-        distanceConstraint.maximumDistance = 10
-        distanceConstraint.influenceFactor = 0.8
-
-        let lookAtConstraint = SCNLookAtConstraint(target: dice)
-        lookAtConstraint.isGimbalLockEnabled = true
-
-        let accelerationConstraint = SCNAccelerationConstraint()
-        accelerationConstraint.decelerationDistance = 0.5
-
-        camera?.constraints = [lookAtConstraint, accelerationConstraint, distanceConstraint]
-    }
 }
 
 extension MainViewModel: SCNSceneRendererDelegate {
@@ -193,11 +155,10 @@ extension MainViewModel: SCNSceneRendererDelegate {
                 nodeStats.diceEulerAngles = dice.eulerAngles.description
                 nodeStats.diceRotation = dice.rotation.description
             }
-            if let camera = camera?.presentation {
-                nodeStats.cameraPosition = camera.position.description
-                nodeStats.cameraEulerAngles = camera.eulerAngles.description
-                nodeStats.cameraRotation = camera.rotation.description
-            }
+            let camera = sceneManager.camera.presentation
+            nodeStats.cameraPosition = camera.position.description
+            nodeStats.cameraEulerAngles = camera.eulerAngles.description
+            nodeStats.cameraRotation = camera.rotation.description
         }
     }
 

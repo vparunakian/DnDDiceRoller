@@ -22,7 +22,7 @@ struct MainView: View {
             ZStack {
                 SceneView(
                     scene: viewModel.mainScene,
-                    pointOfView: viewModel.camera,
+                    pointOfView: viewModel.sceneManager.camera,
                     options: [],
                     delegate: viewModel
                 )

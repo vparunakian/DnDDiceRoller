@@ -32,6 +32,7 @@
 		058D38E42B33858900E03EF8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554ACF32B0C023000791897 /* MainViewModel.swift */; };
 		058D38E52B33859100E03EF8 /* DiceAnglesToNumberConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */; };
 		058D38E72B33A93500E03EF8 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D38E62B33A93500E03EF8 /* DebugView.swift */; };
+		058D38E92B33C46300E03EF8 /* AccessibleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058D38E82B33C46300E03EF8 /* AccessibleNode.swift */; };
 		05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		058D38DF2B337FE200E03EF8 /* DnDDiceRoller.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DnDDiceRoller.xctestplan; sourceTree = "<group>"; };
 		058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeTypeTests.swift; sourceTree = "<group>"; };
 		058D38E62B33A93500E03EF8 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		058D38E82B33C46300E03EF8 /* AccessibleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleNode.swift; sourceTree = "<group>"; };
 		05DB05B22B19761A00B305AC /* DiceTypeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTypeMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,8 +135,8 @@
 		054B70B82B2C137E003781DE /* DnDDiceRollerTests */ = {
 			isa = PBXGroup;
 			children = (
-				058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */,
 				058D38DD2B337B1B00E03EF8 /* DiceAnglesToNumberTests.swift */,
+				058D38E12B33818C00E03EF8 /* NodeTypeTests.swift */,
 			);
 			path = DnDDiceRollerTests;
 			sourceTree = "<group>";
@@ -196,10 +198,11 @@
 		0566BADD2B0EDE7B00D10E11 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				058D38E82B33C46300E03EF8 /* AccessibleNode.swift */,
+				05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */,
+				052C86202B229DDE000A3D58 /* Double+Extensions.swift */,
 				0566BADE2B0EDE8800D10E11 /* SCNNode+Extensions.swift */,
 				0556EAD92B16E15B000583EC /* SCNVector3+Extensions.swift */,
-				052C86202B229DDE000A3D58 /* Double+Extensions.swift */,
-				05707CBA2B25105200DA242D /* DiceAnglesToNumberConverter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,10 +221,10 @@
 			children = (
 				054923DB2B05896300317F1F /* Decal.swift */,
 				05063EE42AFB0F1300308258 /* Material.swift */,
-				0575D11E2B0D73AA00C40A06 /* NodeType.swift */,
 				052C86292B23E97D000A3D58 /* NodeStats.swift */,
-				0575D11A2B0D59DC00C40A06 /* SceneType.swift */,
+				0575D11E2B0D73AA00C40A06 /* NodeType.swift */,
 				052C86242B23C9A0000A3D58 /* PhysicsBodyProperties.swift */,
+				0575D11A2B0D59DC00C40A06 /* SceneType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				052C86212B229DDE000A3D58 /* Double+Extensions.swift in Sources */,
 				055375712AF9C68E00244A63 /* DnDDiceRollerApp.swift in Sources */,
 				05DB05B32B19761A00B305AC /* DiceTypeMenuView.swift in Sources */,
+				058D38E92B33C46300E03EF8 /* AccessibleNode.swift in Sources */,
 				0566BADC2B0EBB2E00D10E11 /* SettingsView.swift in Sources */,
 				0556EADA2B16E15B000583EC /* SCNVector3+Extensions.swift in Sources */,
 				058D38E72B33A93500E03EF8 /* DebugView.swift in Sources */,
