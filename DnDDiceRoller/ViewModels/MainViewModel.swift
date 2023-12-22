@@ -15,7 +15,7 @@ final class MainViewModel: NSObject, ObservableObject {
     private var currentDice: SCNNode?
     private(set) var mainScene: SCNScene?
 
-    @Published var material = Material.plastic
+    @Published var material = Material.metalMatte
     @Published var decal = Decal.sfpr
 
     private var subcriptions = Set<AnyCancellable>()
@@ -85,7 +85,7 @@ final class MainViewModel: NSObject, ObservableObject {
 
         let rotateAction = SCNAction.repeatForever(
             SCNAction.rotate(
-                by: -.pi * 2,
+                by: -.pi,
                 around: SCNVector3(x: 0, y: 1, z: 0),
                 duration: TimeInterval(10)
             )
@@ -97,15 +97,15 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     func throwDice() {
-        guard let dice = currentDice else {
+        guard let currentDice else {
             return
         }
 
-        dice.removeAllActions()
-        setupCameraFollowing(dice: dice)
+        currentDice.removeAllActions()
+        setupCameraFollowing(dice: currentDice)
 
-        PhysicsBodyProperties.dice.apply(to: dice)
-        dice.eulerAngles = SCNVector3(
+        PhysicsBodyProperties.dice.apply(to: currentDice)
+        currentDice.eulerAngles = SCNVector3(
             x: .random(in: -.pi...(.pi)),
             y: .random(in: -.pi...(.pi)),
             z: .random(in: -.pi...(.pi))
@@ -126,8 +126,8 @@ final class MainViewModel: NSObject, ObservableObject {
             z: -10
         )
 
-        dice.physicsBody?.applyForce(rotatingPush, at: atVector, asImpulse: true)
-        dice.physicsBody?.applyForce(linearPush, asImpulse: true)
+        currentDice.physicsBody?.applyForce(rotatingPush, at: atVector, asImpulse: true)
+        currentDice.physicsBody?.applyForce(linearPush, asImpulse: true)
     }
 }
 

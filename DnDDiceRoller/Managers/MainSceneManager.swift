@@ -23,6 +23,7 @@ final class MainSceneManager {
         }
         self.scene = scene
         self.setupFloorNode()
+        self.setupWallNodes()
     }
 
     private func setupDefaultCamera() -> AccessibleNode {
@@ -53,6 +54,37 @@ final class MainSceneManager {
         material.diffuse.contents = UIColor.blackWhite
         floor.geometry?.insertMaterial(material, at: 0)
         scene.rootNode.addChildNode(floor)
+    }
+
+    private func setupWallNodes() {
+        let wallN = AccessibleNode()
+        wallN.geometry = SCNPlane(width: 120, height: 50)
+        wallN.name = "wall"
+        wallN.accessibilityIdentifier = wallN.name
+        wallN.position = SCNVector3(x: 0, y: 25, z: -80)
+        PhysicsBodyProperties.floor.apply(to: wallN)
+
+        let material = SCNMaterial()
+        material.name = "main"
+        material.lightingModel = .physicallyBased
+        material.metalness.contents = 0.5
+        material.roughness.contents = 0.5
+        material.diffuse.contents = UIColor.glacier
+        wallN.geometry?.insertMaterial(material, at: 0)
+
+        let wallS = wallN.clone()
+        wallS.position = SCNVector3(x: 0, y: 25, z: 40)
+
+        let wallE = wallN.clone()
+        wallE.position = SCNVector3(x: 60, y: 25, z: -20)
+        wallE.eulerAngles = SCNVector3(x: 0, y: -.pi / 2, z: 0)
+
+        let wallW = wallE.clone()
+        wallW.position = SCNVector3(x: -60, y: 25, z: -20)
+
+        [wallN, wallS, wallE, wallW].forEach { wall in
+            scene.rootNode.addChildNode(wall)
+        }
     }
 
     func getNode(type: NodeType) -> SCNNode? {
