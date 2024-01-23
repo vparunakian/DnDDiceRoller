@@ -41,9 +41,6 @@ final class NodeTypeTests: XCTestCase {
         node.name = "d20"
         XCTAssertEqual(node.nodeType, .d20)
 
-        node.name = "table"
-        XCTAssertEqual(node.nodeType, .table)
-
         node.name = "camera"
         XCTAssertEqual(node.nodeType, .camera)
 

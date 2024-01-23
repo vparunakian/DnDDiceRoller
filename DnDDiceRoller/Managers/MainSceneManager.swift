@@ -121,16 +121,14 @@ final class MainSceneManager {
 
         let lookAtConstraint = SCNLookAtConstraint(target: node)
 
-        let moveVector: SCNVector3
-
-        if presentation.nodeType == .d4 {
-            moveVector = SCNVector3(
+        let moveVector = if presentation.nodeType == .d4 {
+            SCNVector3(
                 x: presentation.position.x,
                 y: 3.5,
                 z: presentation.position.z + 2.5
             )
         } else {
-            moveVector = SCNVector3(
+            SCNVector3(
                 x: presentation.position.x,
                 y: 4.5,
                 z: presentation.position.z
