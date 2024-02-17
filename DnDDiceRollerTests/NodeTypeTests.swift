@@ -18,7 +18,7 @@ final class NodeTypeTests: XCTestCase {
         node.name = "ball"
         XCTAssertEqual(node.nodeType, .unknown)
 
-        node.name = "table"
+        node.name = "floor"
         XCTAssertNotEqual(node.nodeType, .unknown)
     }
 

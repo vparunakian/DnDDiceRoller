@@ -12,7 +12,7 @@ final class MainViewModel: NSObject, ObservableObject {
     private(set) var sceneManager = MainSceneManager(scene: .main)
     private let diceSceneManager = MainSceneManager(scene: .dice)
 
-    private var currentDice: SCNNode?
+    private var activeDices = [SCNNode]()
     private(set) var mainScene: SCNScene?
 
     @Published var material = Material.metalMatte
@@ -52,11 +52,10 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     private func removeDiceIfNeeded() {
-        guard currentDice != nil else {
+        guard !activeDices.isEmpty else {
             return
         }
-        currentDice?.removeFromParentNode()
-        currentDice = nil
+        activeDices.forEach { $0.removeFromParentNode() }
     }
 
     private func setupCameraFollowing(dice: SCNNode) {
@@ -65,10 +64,10 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     private func panCameraToDice() {
-        sceneManager.cameraPanAndOverlook(node: currentDice)
+        sceneManager.cameraPanAndOverlook(node: activeDices.first)
 
         // TODO: save to history of dice throws
-        lastNumberDice = DiceAnglesToNumberConverter.convertAnglesToNumber(for: currentDice?.presentation)
+        lastNumberDice = DiceAnglesToNumberConverter.convertAnglesToNumber(for: activeDices.first?.presentation)
         print(lastNumberDice)
     }
 
@@ -79,7 +78,7 @@ final class MainViewModel: NSObject, ObservableObject {
         }
         material.apply(to: dice)
         decal.apply(to: dice)
-        currentDice = dice
+        activeDices.append(dice)
 
         dice.position = SCNVector3(0, 4, 0)
 
@@ -97,7 +96,7 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     func throwDice() {
-        guard let currentDice else {
+        guard let currentDice = activeDices.first else {
             return
         }
 
@@ -136,7 +135,7 @@ extension MainViewModel: SCNSceneRendererDelegate {
         // renderer.showsStatistics = true
         // renderer.debugOptions = [.showWireframe, .showBoundingBoxes]
         DispatchQueue.main.async { [unowned self] in
-            if let dice = currentDice?.presentation {
+            if let dice = activeDices.first?.presentation {
                 nodeStats.dicePosition = dice.position.description
                 nodeStats.diceEulerAngles = dice.eulerAngles.description
                 nodeStats.diceRotation = dice.rotation.description
@@ -149,7 +148,7 @@ extension MainViewModel: SCNSceneRendererDelegate {
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
-        if let physicsBody = currentDice?.physicsBody {
+        if let physicsBody = activeDices.first?.physicsBody {
             isRestingSubject.send(physicsBody.isResting)
         }
     }
