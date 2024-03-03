@@ -56,15 +56,16 @@ final class MainViewModel: NSObject, ObservableObject {
             return
         }
         activeDices.forEach { $0.removeFromParentNode() }
+        activeDices.removeAll()
     }
 
     private func setupCameraFollowing(dice: SCNNode) {
         sceneManager.resetCamera()
-        sceneManager.cameraFollow(node: dice)
+        // sceneManager.cameraFollow(node: dice)
     }
 
     private func panCameraToDice() {
-        sceneManager.cameraPanAndOverlook(node: activeDices.first)
+        // sceneManager.cameraPanAndOverlook(node: activeDices.first)
 
         // TODO: save to history of dice throws
         lastNumberDice = DiceAnglesToNumberConverter.convertAnglesToNumber(for: activeDices.first?.presentation)
@@ -84,7 +85,7 @@ final class MainViewModel: NSObject, ObservableObject {
 
         let rotateAction = SCNAction.repeatForever(
             SCNAction.rotate(
-                by: -.pi,
+                by: -.pi / 1.5,
                 around: SCNVector3(x: 0, y: 1, z: 0),
                 duration: TimeInterval(10)
             )
@@ -122,7 +123,7 @@ final class MainViewModel: NSObject, ObservableObject {
         let linearPush = SCNVector3(
             x: .random(in: -1...1),
             y: -1.5,
-            z: -10
+            z: -8
         )
 
         currentDice.physicsBody?.applyForce(rotatingPush, at: atVector, asImpulse: true)
